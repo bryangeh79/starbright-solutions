@@ -12,7 +12,8 @@
       "Bash(git commit -m \"Remove old src/pages directory:*)",
       "Bash(git push:*)",
       "Bash(git commit -m \"Add Starbright logo to header:*)",
-      "Bash(ls -lh C:/AI_WORKSPACE/starbright-solutions/public/images/*starbright*)"
+      "Bash(ls -lh C:/AI_WORKSPACE/starbright-solutions/public/images/*starbright*)",
+      "Bash(pip install:*)"
     ]
   }
 }
