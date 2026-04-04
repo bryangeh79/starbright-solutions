@@ -37,19 +37,25 @@ export default function Header() {
       }}>
 
         {/* Logo */}
-        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', flexShrink: 0 }}>
+        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', flexShrink: 0 }}>
           <Image
             src="/images/starbright_logo_only_95percent_256.png"
             alt="Starbright Solutions"
-            width={36}
-            height={36}
+            width={40}
+            height={40}
             priority
             style={{ objectFit: 'contain' }}
           />
-          <span style={{
-            color: '#fff', fontWeight: 700, fontSize: '13px',
-            letterSpacing: '0.08em', fontFamily: 'Inter, sans-serif',
-          }}>STARBRIGHT</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+            <span style={{
+              color: '#fff', fontWeight: 700, fontSize: '13px',
+              letterSpacing: '0.08em', fontFamily: 'Inter, sans-serif',
+            }}>STARBRIGHT</span>
+            <span style={{
+              color: 'rgba(255,255,255,0.6)', fontWeight: 400, fontSize: '10px',
+              letterSpacing: '0.05em', fontFamily: 'Inter, sans-serif',
+            }}>SOLUTIONS</span>
+          </div>
         </a>
 
         {/* Desktop Nav */}
