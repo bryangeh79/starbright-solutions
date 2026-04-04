@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const products = [
@@ -202,9 +203,12 @@ function ProductCard({ p }) {
           background: 'radial-gradient(ellipse at 50% 60%, ' + p.glowColor.replace('0.15', '0.45').replace('0.18', '0.45') + ' 0%, ' + p.glowColor.replace('0.15', '0.15').replace('0.18', '0.15') + ' 45%, transparent 72%)',
         }} />
         {p.logo ? (
-          <img src={p.logo} alt={p.name}
+          <Image src={p.logo} alt={p.name}
+            width={140} height={140}
+            priority={false}
+            loading="lazy"
             style={{
-              width: '140px', height: '140px', objectFit: 'contain', position: 'relative', zIndex: 1,
+              objectFit: 'contain', position: 'relative', zIndex: 1,
               filter: p.logoFilter || 'none',
             }} />
         ) : (
