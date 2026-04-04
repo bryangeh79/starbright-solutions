@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const navItems = [
   { label: '解决方案', href: '/solutions' },
@@ -37,13 +38,14 @@ export default function Header() {
 
         {/* Logo */}
         <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', flexShrink: 0 }}>
-          <div style={{
-            width: '30px', height: '30px', borderRadius: '8px',
-            background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            color: '#fff', fontWeight: 700, fontSize: '13px',
-            boxShadow: '0 0 14px rgba(99,102,241,0.45)',
-          }}>S</div>
+          <Image
+            src="/images/starbright_logo_only_95percent_256.png"
+            alt="Starbright Solutions"
+            width={36}
+            height={36}
+            priority
+            style={{ objectFit: 'contain' }}
+          />
           <span style={{
             color: '#fff', fontWeight: 700, fontSize: '13px',
             letterSpacing: '0.08em', fontFamily: 'Inter, sans-serif',
