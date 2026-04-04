@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
-import '../src/styles/globals.css';
+import '../styles/globals.css';
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
 import ScrollTop from '../src/components/ScrollTop';
