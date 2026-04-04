@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
-import '../styles/globals.css';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import ScrollTop from '../components/ScrollTop';
+import '../src/styles/globals.css';
+import Header from '../src/components/Header';
+import Footer from '../src/components/Footer';
+import ScrollTop from '../src/components/ScrollTop';
 
 const siteName = 'STARBRIGHT SOLUTIONS';
 const defaultTitle = 'STARBRIGHT SOLUTIONS | AI-Powered Digital Solutions';
