@@ -1,0 +1,5 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://starbright-solutions.example.com/sitemap.xml
+

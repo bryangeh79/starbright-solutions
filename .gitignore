@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Cache
+.cache/
+.npm/
+
+# Logs
+*.log
+dev.err
+dev-out.log
+dev-err.log
+
+# Misc
+permission-test.txt
+.DS_Store
+.env
+.env.local
+.env.production.local
+
+# Claude
+.openclaw/
+multi-shot.js
+take-screenshot.js
