@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const navLinks = [
   { label: '解决方案', href: '/solutions' },
   { label: '行业应用', href: '/industries' },
@@ -46,34 +48,37 @@ export default function Footer() {
           {/* Brand col */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-              <div
-                style={{
-                  width: '30px',
-                  height: '30px',
-                  borderRadius: '8px',
-                  background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#fff',
-                  fontWeight: 700,
-                  fontSize: '13px',
-                  flexShrink: 0,
-                }}
-              >
-                S
+              <Image
+                src="/images/starbright_logo_only_95percent_256.png"
+                alt="Starbright Solutions"
+                width={40}
+                height={40}
+                style={{ objectFit: 'contain', flexShrink: 0 }}
+              />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                <span
+                  style={{
+                    color: '#fff',
+                    fontWeight: 600,
+                    fontSize: '13px',
+                    letterSpacing: '0.06em',
+                    fontFamily: 'Inter, sans-serif',
+                  }}
+                >
+                  STARBRIGHT
+                </span>
+                <span
+                  style={{
+                    color: 'rgba(255,255,255,0.5)',
+                    fontWeight: 400,
+                    fontSize: '11px',
+                    letterSpacing: '0.05em',
+                    fontFamily: 'Inter, sans-serif',
+                  }}
+                >
+                  SOLUTIONS
+                </span>
               </div>
-              <span
-                style={{
-                  color: '#fff',
-                  fontWeight: 600,
-                  fontSize: '13px',
-                  letterSpacing: '0.06em',
-                  fontFamily: 'Inter, sans-serif',
-                }}
-              >
-                STARBRIGHT SOLUTIONS
-              </span>
             </div>
             <p
               style={{
