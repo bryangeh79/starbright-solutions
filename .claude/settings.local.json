@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(netstat -ano)",
+      "Bash(taskkill /PID 17468 /F)",
+      "Bash(cmd /c \"taskkill /PID 17468 /F\")",
+      "Bash(cmd /c 'taskkill /PID 17468 /F')",
+      "Bash(powershell -Command \"Stop-Process -Id 17468 -Force\")",
+      "Bash(git add:*)",
+      "Bash(curl -s https://starbright-solutions.vercel.app/)",
+      "Bash(git commit -m \"Remove old src/pages directory:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}
