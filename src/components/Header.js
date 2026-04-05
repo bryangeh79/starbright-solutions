@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next/pages';
 
@@ -53,7 +54,7 @@ export default function Header() {
   };
 
   const currentLocale = LOCALES.find((l) => l.code === locale) || LOCALES[0];
-  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
+  const currentPath = pathname;
 
   return (
     <header style={{
@@ -70,7 +71,7 @@ export default function Header() {
       }}>
 
         {/* Logo */}
-        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', flexShrink: 0 }}>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', flexShrink: 0 }}>
           <Image
             src="/images/starbright_logo_only_95percent_256.png"
             alt="Starbright Solutions"
@@ -89,14 +90,14 @@ export default function Header() {
               letterSpacing: '0.05em', fontFamily: 'Inter, sans-serif',
             }}>SOLUTIONS</span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav style={{ display: 'flex', alignItems: 'center', gap: '4px' }} className="sb-nav-desktop">
           {navItems.map((item) => {
-            const isActive = currentPath === item.href;
+            const isActive = currentPath === item.href || currentPath.startsWith(item.href + '/');
             return (
-              <a key={item.href} href={item.href} style={{
+              <Link key={item.href} href={item.href} style={{
                 color: isActive ? '#fff' : 'rgba(255,255,255,0.5)',
                 fontSize: '14px', fontWeight: isActive ? 600 : 400,
                 textDecoration: 'none', fontFamily: 'Inter, sans-serif',
@@ -117,7 +118,7 @@ export default function Header() {
                   }
                 }}>
                 {item.label}
-              </a>
+              </Link>
             );
           })}
         </nav>
@@ -178,7 +179,7 @@ export default function Header() {
           </div>
 
           {/* CTA */}
-          <a href="/contact" className="sb-cta-desktop" style={{
+          <Link href="/contact" className="sb-cta-desktop" style={{
             display: 'inline-flex', alignItems: 'center', gap: '6px',
             padding: '8px 18px', borderRadius: '999px',
             background: 'rgba(99,102,241,1)',
@@ -201,7 +202,7 @@ export default function Header() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -221,7 +222,7 @@ export default function Header() {
           borderTop: '1px solid rgba(255,255,255,0.07)', padding: '12px 24px 24px',
         }}>
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} style={{
+            <Link key={item.href} href={item.href} style={{
               display: 'flex', alignItems: 'center', justifyContent: 'space-between',
               color: 'rgba(255,255,255,0.75)', fontSize: '15px', fontWeight: 500,
               padding: '13px 0', borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -231,7 +232,7 @@ export default function Header() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
-            </a>
+            </Link>
           ))}
 
           {/* Mobile language switcher */}
@@ -250,12 +251,12 @@ export default function Header() {
             ))}
           </div>
 
-          <a href="/contact" style={{
+          <Link href="/contact" style={{
             display: 'block', marginTop: '8px', padding: '13px 20px',
             borderRadius: '999px', background: '#6366f1',
             color: '#fff', fontSize: '14px', fontWeight: 600,
             textAlign: 'center', textDecoration: 'none', fontFamily: 'Inter, sans-serif',
-          }}>{t('nav.cta')}</a>
+          }}>{t('nav.cta')}</Link>
         </div>
       )}
 
