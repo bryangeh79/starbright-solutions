@@ -1,26 +1,59 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
-const navItems = [
-  { label: '解决方案', href: '/solutions' },
-  { label: '行业应用', href: '/industries' },
-  { label: '产品', href: '/products' },
-  { label: '关于我们', href: '/about' },
-  { label: '常见问题', href: '/faq' },
+const LOCALES = [
+  { code: 'zh', label: '中文', flag: '🇨🇳' },
+  { code: 'en', label: 'EN', flag: '🇬🇧' },
+  { code: 'ms', label: 'MY', flag: '🇲🇾' },
+  { code: 'vi', label: 'VI', flag: '🇻🇳' },
+  { code: 'id', label: 'ID', flag: '🇮🇩' },
+  { code: 'th', label: 'TH', flag: '🇹🇭' },
 ];
 
 export default function Header() {
+  const { t } = useTranslation('common');
+  const router = useRouter();
+  const { locale, pathname, asPath, query } = router;
+
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [currentPath, setCurrentPath] = useState('');
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef(null);
+
+  const navItems = [
+    { label: t('nav.solutions'), href: '/solutions' },
+    { label: t('nav.industries'), href: '/industries' },
+    { label: t('nav.products'), href: '/products' },
+    { label: t('nav.about'), href: '/about' },
+    { label: t('nav.faq'), href: '/faq' },
+  ];
 
   useEffect(() => {
-    setCurrentPath(window.location.pathname);
     const onScroll = () => setScrolled(window.scrollY > 16);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (langRef.current && !langRef.current.contains(e.target)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const switchLocale = (code) => {
+    setLangOpen(false);
+    router.push({ pathname, query }, asPath, { locale: code });
+  };
+
+  const currentLocale = LOCALES.find((l) => l.code === locale) || LOCALES[0];
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
 
   return (
     <header style={{
@@ -89,32 +122,87 @@ export default function Header() {
           })}
         </nav>
 
-        {/* CTA */}
-        <a href="/contact" className="sb-cta-desktop" style={{
-          display: 'inline-flex', alignItems: 'center', gap: '6px',
-          padding: '8px 18px', borderRadius: '999px',
-          background: 'rgba(99,102,241,1)',
-          color: '#fff', fontSize: '13px', fontWeight: 600,
-          textDecoration: 'none', fontFamily: 'Inter, sans-serif',
-          flexShrink: 0,
-          boxShadow: '0 0 18px rgba(99,102,241,0.35)',
-          transition: 'background 0.2s, box-shadow 0.2s, transform 0.2s',
-        }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = '#5254cc';
-            e.currentTarget.style.boxShadow = '0 0 28px rgba(99,102,241,0.55)';
-            e.currentTarget.style.transform = 'translateY(-1px)';
+        {/* Right: Lang switcher + CTA */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0 }}>
+
+          {/* Language switcher */}
+          <div ref={langRef} style={{ position: 'relative' }} className="sb-nav-desktop">
+            <button onClick={() => setLangOpen(!langOpen)} style={{
+              display: 'flex', alignItems: 'center', gap: '5px',
+              background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)',
+              borderRadius: '8px', padding: '5px 10px', cursor: 'pointer',
+              color: 'rgba(255,255,255,0.7)', fontSize: '13px', fontFamily: 'Inter',
+              transition: 'background 0.2s, border-color 0.2s',
+            }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; }}>
+              <span>{currentLocale.flag}</span>
+              <span>{currentLocale.label}</span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+                style={{ transform: langOpen ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}>
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+
+            {langOpen && (
+              <div style={{
+                position: 'absolute', top: 'calc(100% + 8px)', right: 0,
+                background: 'rgba(10,10,20,0.97)', backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px',
+                padding: '6px', minWidth: '130px',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.5)',
+                zIndex: 200,
+              }}>
+                {LOCALES.map((loc) => (
+                  <button key={loc.code} onClick={() => switchLocale(loc.code)} style={{
+                    display: 'flex', alignItems: 'center', gap: '8px', width: '100%',
+                    padding: '8px 12px', borderRadius: '8px', border: 'none',
+                    background: locale === loc.code ? 'rgba(99,102,241,0.2)' : 'transparent',
+                    color: locale === loc.code ? '#a5b4fc' : 'rgba(255,255,255,0.65)',
+                    fontSize: '13px', fontFamily: 'Inter', cursor: 'pointer',
+                    transition: 'background 0.15s',
+                  }}
+                    onMouseEnter={(e) => { if (locale !== loc.code) e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; }}
+                    onMouseLeave={(e) => { if (locale !== loc.code) e.currentTarget.style.background = 'transparent'; }}>
+                    <span>{loc.flag}</span>
+                    <span>{loc.label}</span>
+                    {locale === loc.code && (
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" strokeWidth="3" style={{ marginLeft: 'auto' }}>
+                        <path d="M20 6L9 17l-5-5" />
+                      </svg>
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* CTA */}
+          <a href="/contact" className="sb-cta-desktop" style={{
+            display: 'inline-flex', alignItems: 'center', gap: '6px',
+            padding: '8px 18px', borderRadius: '999px',
+            background: 'rgba(99,102,241,1)',
+            color: '#fff', fontSize: '13px', fontWeight: 600,
+            textDecoration: 'none', fontFamily: 'Inter, sans-serif',
+            boxShadow: '0 0 18px rgba(99,102,241,0.35)',
+            transition: 'background 0.2s, box-shadow 0.2s, transform 0.2s',
           }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'rgba(99,102,241,1)';
-            e.currentTarget.style.boxShadow = '0 0 18px rgba(99,102,241,0.35)';
-            e.currentTarget.style.transform = 'translateY(0)';
-          }}>
-          预约咨询
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#5254cc';
+              e.currentTarget.style.boxShadow = '0 0 28px rgba(99,102,241,0.55)';
+              e.currentTarget.style.transform = 'translateY(-1px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(99,102,241,1)';
+              e.currentTarget.style.boxShadow = '0 0 18px rgba(99,102,241,0.35)';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}>
+            {t('nav.cta')}
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
 
         {/* Mobile toggle */}
         <button onClick={() => setMenuOpen(!menuOpen)} className="sb-menu-toggle"
@@ -145,12 +233,29 @@ export default function Header() {
               </svg>
             </a>
           ))}
+
+          {/* Mobile language switcher */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '16px', marginBottom: '8px' }}>
+            {LOCALES.map((loc) => (
+              <button key={loc.code} onClick={() => switchLocale(loc.code)} style={{
+                display: 'flex', alignItems: 'center', gap: '5px',
+                padding: '6px 12px', borderRadius: '999px', border: 'none',
+                background: locale === loc.code ? 'rgba(99,102,241,0.25)' : 'rgba(255,255,255,0.07)',
+                color: locale === loc.code ? '#a5b4fc' : 'rgba(255,255,255,0.6)',
+                fontSize: '12px', fontFamily: 'Inter', cursor: 'pointer',
+              }}>
+                <span>{loc.flag}</span>
+                <span>{loc.label}</span>
+              </button>
+            ))}
+          </div>
+
           <a href="/contact" style={{
-            display: 'block', marginTop: '16px', padding: '13px 20px',
+            display: 'block', marginTop: '8px', padding: '13px 20px',
             borderRadius: '999px', background: '#6366f1',
             color: '#fff', fontSize: '14px', fontWeight: 600,
             textAlign: 'center', textDecoration: 'none', fontFamily: 'Inter, sans-serif',
-          }}>预约咨询</a>
+          }}>{t('nav.cta')}</a>
         </div>
       )}
 

@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "solutions": "Solusi",
+    "industries": "Industri",
+    "products": "Produk",
+    "about": "Tentang Kami",
+    "faq": "FAQ",
+    "contact": "Hubungi Kami",
+    "cta": "Jadwalkan Konsultasi"
+  },
+  "hero": {
+    "badge": "AI-Powered · Solusi Digital Perusahaan",
+    "title1": "Tingkatkan Website",
+    "title2": "Bisnis Anda Menjadi",
+    "title3": "Platform Digital Profesional",
+    "desc": "STARBRIGHT SOLUTIONS membangun website yang lebih jelas, layanan pelanggan AI, dan sistem otomasi — membantu merek berkomunikasi lebih baik, melayani pelanggan lebih cepat.",
+    "cta_primary": "Dapatkan Proposal",
+    "cta_secondary": "Lihat Layanan Kami"
+  },
+  "services": {
+    "badge": "Layanan Utama",
+    "title": "Gambaran Umum Layanan",
+    "desc": "Empat pilar utama digitalisasi perusahaan — dari website hingga chatbot AI, sistem balas otomatis hingga otomasi alur kerja lengkap.",
+    "web": { "title": "Website & Sistem Web Bisnis", "desc": "Bangun website yang stabil, profesional, dan skalabel yang menyeimbangkan presentasi merek, konversi bisnis, dan operasi jangka panjang.", "tag": "Web Dev" },
+    "ai": { "title": "Bot Layanan Pelanggan AI", "desc": "Tangani pertanyaan umum, pengenalan produk, dan respons pra-penjualan secara otomatis — meningkatkan efisiensi layanan dan pengalaman pelanggan.", "tag": "AI" },
+    "auto": { "title": "Sistem Balas Otomatis", "desc": "Mencakup formulir, janji temu, notifikasi, dan respons skenario tetap — mengurangi balasan yang terlewat dan penanganan berulang.", "tag": "Automation" },
+    "workflow": { "title": "Solusi Otomasi Bisnis", "desc": "Hubungkan alur prospek, penugasan tugas, kolaborasi persetujuan, dan lainnya — membuat proses bisnis lebih stabil dan terkontrol.", "tag": "Workflow" }
+  },
+  "stats": {
+    "projects": "Proyek Berhasil Dikirim",
+    "industries": "Industri Tercakup",
+    "satisfaction": "Kepuasan Klien",
+    "response": "Janji Respons Cepat"
+  },
+  "steps": {
+    "badge": "Cara Kami Bekerja",
+    "title": "Proses Kolaborasi yang Jelas",
+    "desc": "Setiap langkah memiliki standar pengiriman dan kriteria keputusan yang jelas, membuat prosesnya lebih lancar.",
+    "s1": { "title": "Penemuan", "desc": "Konfirmasi tujuan bisnis, aset yang ada, dan ruang lingkup proyek. Tetapkan standar pengiriman yang jelas." },
+    "s2": { "title": "Desain Solusi", "desc": "Struktur konten, sistem visual, dan perencanaan fitur semuanya bergerak bersamaan — menghasilkan peta jalan yang dapat dilaksanakan." },
+    "s3": { "title": "Pengembangan & Peluncuran", "desc": "Jalankan rencana yang disepakati melalui pengembangan dan pengujian, lalu deploy — memastikan pengiriman yang stabil dan andal." },
+    "s4": { "title": "Optimisasi Berkelanjutan", "desc": "Tindak lanjuti umpan balik pasca-peluncuran dan terus sesuaikan serta optimalkan berdasarkan penggunaan nyata." }
+  },
+  "industries": {
+    "badge": "Industri",
+    "title": "Industri yang Kami Layani",
+    "desc": "Solusi kami telah diterapkan di berbagai industri, membangun keahlian mendalam di setiap sektor.",
+    "i1": "Ritel & Toko Fisik",
+    "i2": "Makanan & Industri Jasa",
+    "i3": "Pendidikan & Pelatihan",
+    "i4": "Keuangan & Layanan Profesional",
+    "i5": "E-commerce & Bisnis Online",
+    "i6": "Manajemen Operasi Internal"
+  },
+  "products_section": {
+    "badge": "PRODUK NYATA",
+    "title": "Produk Cerdas Kami",
+    "desc": "Dibangun dengan AI mutakhir dan pengalaman bisnis nyata bertahun-tahun — produk yang benar-benar berfungsi.",
+    "m33_live": "✦ Live",
+    "m33_desc": "Sistem otomasi lotere Telegram dengan taruhan otomatis, kueri undian langsung, laporan penyelesaian otomatis, dan antarmuka multibahasa (EN / 中文 / Tiếng Việt).",
+    "m33_next": "Selanjutnya",
+    "m33_roadmap": "🚀 Aplikasi Web & Mobile Dalam Pengembangan",
+    "chat_dev": "⚡ Dalam Pengembangan",
+    "chat_desc": "Sistem layanan pelanggan AI tingkat perusahaan — menangani pertanyaan frekuensi tinggi, panduan pra-penjualan, dan FAQ secara otomatis. Respons 24/7, terintegrasi dengan website dan platform multi-saluran.",
+    "chat_cta": "Reservasi Akses Awal"
+  },
+  "cta_section": {
+    "title": "Siap Memulai?",
+    "desc": "Jika Anda memiliki draf website, situs yang ada, materi produk, atau tujuan proyek — kami dapat mulai dari pengumpulan kebutuhan dan bergerak cepat ke fase solusi.",
+    "primary": "Hubungi Kami Sekarang",
+    "secondary": "Pelajari Layanan Kami"
+  },
+  "footer": {
+    "desc": "Menyediakan solusi pengembangan website, layanan pelanggan AI, dan otomasi bisnis untuk perusahaan. Membantu merek berkomunikasi lebih jelas, melayani pelanggan lebih lancar.",
+    "nav_title": "Navigasi",
+    "services_title": "Layanan",
+    "service1": "Website & Sistem Web Bisnis",
+    "service2": "Bot Layanan Pelanggan AI",
+    "service3": "Sistem Balas Otomatis",
+    "service4": "Otomasi Bisnis",
+    "rights": "© 2026 STARBRIGHT SOLUTIONS · Semua hak dilindungi.",
+    "tagline": "Website · Chatbot AI · Otomasi Bisnis"
+  }
+}

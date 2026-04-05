@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "solutions": "Solutions",
+    "industries": "Industries",
+    "products": "Products",
+    "about": "About Us",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "cta": "Book a Consultation"
+  },
+  "hero": {
+    "badge": "AI-Powered · Enterprise Digital Solutions",
+    "title1": "Upgrade Your",
+    "title2": "Business Website Into a",
+    "title3": "Digital Powerhouse",
+    "desc": "STARBRIGHT SOLUTIONS builds clearer websites, AI customer service, and automation systems — helping brands communicate better, serve customers faster, and run operations smoother.",
+    "cta_primary": "Get a Proposal",
+    "cta_secondary": "View Our Services"
+  },
+  "services": {
+    "badge": "Core Services",
+    "title": "What We Do",
+    "desc": "Four core pillars of enterprise digitalization — from websites to AI chatbots, auto-reply systems to full workflow automation.",
+    "web": { "title": "Business Websites & Web Systems", "desc": "Build stable, professional, scalable websites that balance brand presentation, business conversion, and long-term operations.", "tag": "Web Dev" },
+    "ai": { "title": "AI Customer Service Bot", "desc": "Handle common inquiries, product introductions, and pre-sales responses automatically — improving service efficiency and customer experience.", "tag": "AI" },
+    "auto": { "title": "Auto-Reply System", "desc": "Cover forms, appointments, notifications, and fixed-scenario responses — reducing missed replies and repetitive handling.", "tag": "Automation" },
+    "workflow": { "title": "Business Automation Solutions", "desc": "Connect lead flow, task assignment, approval collaboration, and more — making business processes more stable and controllable.", "tag": "Workflow" }
+  },
+  "stats": {
+    "projects": "Projects Delivered",
+    "industries": "Industries Covered",
+    "satisfaction": "Client Satisfaction",
+    "response": "Fast Response Promise"
+  },
+  "steps": {
+    "badge": "How We Work",
+    "title": "A Clear Collaboration Process",
+    "desc": "Every step has clear deliverables and decision criteria, making the process smoother and reducing back-and-forth communication.",
+    "s1": { "title": "Discovery", "desc": "Confirm business goals, existing assets, and project scope. Set clear delivery standards to avoid misalignment." },
+    "s2": { "title": "Solution Design", "desc": "Content structure, visual system, and feature planning all move forward together — delivering an executable roadmap." },
+    "s3": { "title": "Development & Launch", "desc": "Execute the agreed plan through development and testing, then deploy — ensuring stable, reliable delivery." },
+    "s4": { "title": "Continuous Optimization", "desc": "Follow up on post-launch feedback and continuously adjust and optimize based on real usage." }
+  },
+  "industries": {
+    "badge": "Industries",
+    "title": "Industries We Serve",
+    "desc": "Our solutions have been deployed across multiple industries, building deep vertical expertise.",
+    "i1": "Retail & Brick-and-Mortar",
+    "i2": "Food & Service Industry",
+    "i3": "Education & Training",
+    "i4": "Finance & Professional Services",
+    "i5": "E-commerce & Online Business",
+    "i6": "Internal Business Operations"
+  },
+  "products_section": {
+    "badge": "REAL PRODUCTS",
+    "title": "Our Smart Products",
+    "desc": "Built with cutting-edge AI and years of real-world business experience — products that actually work.",
+    "m33_live": "✦ Live",
+    "m33_desc": "Telegram lottery automation system with auto-betting, live draw queries, auto-settlement reports, and multilingual interface (EN / 中文 / Tiếng Việt).",
+    "m33_next": "Next Up",
+    "m33_roadmap": "🚀 Web & Mobile App in Development",
+    "chat_dev": "⚡ In Development",
+    "chat_desc": "Enterprise AI customer service system — handles high-frequency inquiries, pre-sales guidance, and FAQs automatically. 24/7 response, seamlessly integrates with websites and multi-channel platforms.",
+    "chat_cta": "Reserve Early Access"
+  },
+  "cta_section": {
+    "title": "Ready to Get Started?",
+    "desc": "If you have a website draft, existing site, product materials, or project goals — we can start from requirements gathering and move quickly into the solution phase.",
+    "primary": "Contact Us Now",
+    "secondary": "Learn About Our Services"
+  },
+  "footer": {
+    "desc": "Providing website development, AI customer service, and business automation solutions for enterprises. Helping brands communicate more clearly, serve customers more smoothly, and run operations more efficiently.",
+    "nav_title": "Navigation",
+    "services_title": "Services",
+    "service1": "Business Websites & Web Systems",
+    "service2": "AI Customer Service Bot",
+    "service3": "Auto-Reply System",
+    "service4": "Business Automation",
+    "rights": "© 2026 STARBRIGHT SOLUTIONS · All rights reserved.",
+    "tagline": "Websites · AI Chatbots · Business Automation"
+  }
+}

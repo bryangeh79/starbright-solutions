@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "solutions": "Giải Pháp",
+    "industries": "Ngành Nghề",
+    "products": "Sản Phẩm",
+    "about": "Về Chúng Tôi",
+    "faq": "Câu Hỏi Thường Gặp",
+    "contact": "Liên Hệ",
+    "cta": "Đặt Lịch Tư Vấn"
+  },
+  "hero": {
+    "badge": "AI-Powered · Giải Pháp Số Doanh Nghiệp",
+    "title1": "Nâng Cấp Website",
+    "title2": "Doanh Nghiệp Thành",
+    "title3": "Nền Tảng Số Chuyên Nghiệp",
+    "desc": "STARBRIGHT SOLUTIONS xây dựng website rõ ràng hơn, dịch vụ khách hàng AI và hệ thống tự động hóa — giúp thương hiệu giao tiếp tốt hơn, phục vụ khách hàng nhanh hơn.",
+    "cta_primary": "Nhận Đề Xuất",
+    "cta_secondary": "Xem Dịch Vụ"
+  },
+  "services": {
+    "badge": "Dịch Vụ Cốt Lõi",
+    "title": "Tổng Quan Dịch Vụ",
+    "desc": "Bốn trụ cột chính trong số hóa doanh nghiệp — từ website đến chatbot AI, hệ thống tự động trả lời đến tự động hóa quy trình làm việc hoàn chỉnh.",
+    "web": { "title": "Website & Hệ Thống Web Doanh Nghiệp", "desc": "Xây dựng website ổn định, chuyên nghiệp, có khả năng mở rộng — cân bằng trình bày thương hiệu, chuyển đổi kinh doanh và vận hành lâu dài.", "tag": "Web Dev" },
+    "ai": { "title": "Bot Dịch Vụ Khách Hàng AI", "desc": "Tự động xử lý các câu hỏi thường gặp, giới thiệu sản phẩm và phản hồi tiền bán hàng — nâng cao hiệu quả dịch vụ và trải nghiệm khách hàng.", "tag": "AI" },
+    "auto": { "title": "Hệ Thống Tự Động Trả Lời", "desc": "Bao gồm biểu mẫu, lịch hẹn, thông báo và phản hồi tình huống cố định — giảm bỏ lỡ và xử lý lặp đi lặp lại.", "tag": "Automation" },
+    "workflow": { "title": "Giải Pháp Tự Động Hóa Doanh Nghiệp", "desc": "Kết nối luồng khách hàng tiềm năng, phân công nhiệm vụ, cộng tác phê duyệt và nhiều hơn nữa — làm cho quy trình kinh doanh ổn định và có thể kiểm soát hơn.", "tag": "Workflow" }
+  },
+  "stats": {
+    "projects": "Dự Án Đã Bàn Giao",
+    "industries": "Ngành Nghề Phục Vụ",
+    "satisfaction": "Sự Hài Lòng Khách Hàng",
+    "response": "Cam Kết Phản Hồi Nhanh"
+  },
+  "steps": {
+    "badge": "Quy Trình Làm Việc",
+    "title": "Quy Trình Hợp Tác Rõ Ràng",
+    "desc": "Mỗi bước đều có tiêu chí bàn giao và quyết định rõ ràng, giúp quá trình hợp tác suôn sẻ hơn.",
+    "s1": { "title": "Khám Phá Nhu Cầu", "desc": "Xác nhận mục tiêu kinh doanh, tài sản hiện có và phạm vi dự án. Đặt ra tiêu chuẩn bàn giao rõ ràng." },
+    "s2": { "title": "Thiết Kế Giải Pháp", "desc": "Cấu trúc nội dung, hệ thống hình ảnh và lập kế hoạch tính năng cùng tiến — đưa ra lộ trình thực thi được." },
+    "s3": { "title": "Phát Triển & Ra Mắt", "desc": "Thực hiện kế hoạch đã thống nhất qua phát triển và kiểm thử, sau đó triển khai — đảm bảo bàn giao ổn định và đáng tin cậy." },
+    "s4": { "title": "Tối Ưu Hóa Liên Tục", "desc": "Theo dõi phản hồi sau khi ra mắt và liên tục điều chỉnh, tối ưu dựa trên sử dụng thực tế." }
+  },
+  "industries": {
+    "badge": "Ngành Nghề",
+    "title": "Ngành Nghề Chúng Tôi Phục Vụ",
+    "desc": "Giải pháp của chúng tôi đã được triển khai trên nhiều ngành nghề, xây dựng chuyên môn sâu theo chiều dọc.",
+    "i1": "Bán Lẻ & Cửa Hàng",
+    "i2": "Ẩm Thực & Dịch Vụ",
+    "i3": "Giáo Dục & Đào Tạo",
+    "i4": "Tài Chính & Dịch Vụ Chuyên Nghiệp",
+    "i5": "Thương Mại Điện Tử & Kinh Doanh Online",
+    "i6": "Quản Lý Vận Hành Nội Bộ"
+  },
+  "products_section": {
+    "badge": "SẢN PHẨM THỰC TẾ",
+    "title": "Sản Phẩm Thông Minh Của Chúng Tôi",
+    "desc": "Được xây dựng với AI tiên tiến và kinh nghiệm kinh doanh thực tế nhiều năm — những sản phẩm thực sự hoạt động hiệu quả.",
+    "m33_live": "✦ Đang Hoạt Động",
+    "m33_desc": "Hệ thống tự động hóa xổ số Telegram với đặt cược tự động, truy vấn kết quả xổ số trực tiếp, báo cáo thanh toán tự động và giao diện đa ngôn ngữ (EN / 中文 / Tiếng Việt).",
+    "m33_next": "Tiếp Theo",
+    "m33_roadmap": "🚀 Ứng Dụng Web & Di Động Đang Phát Triển",
+    "chat_dev": "⚡ Đang Phát Triển",
+    "chat_desc": "Hệ thống dịch vụ khách hàng AI doanh nghiệp — tự động xử lý các câu hỏi tần suất cao, hướng dẫn tiền bán hàng và câu hỏi thường gặp. Phản hồi 24/7, tích hợp với website và nền tảng đa kênh.",
+    "chat_cta": "Đặt Chỗ Truy Cập Sớm"
+  },
+  "cta_section": {
+    "title": "Sẵn Sàng Bắt Đầu?",
+    "desc": "Nếu bạn có bản thảo website, website hiện có, tài liệu sản phẩm hoặc mục tiêu dự án — chúng tôi có thể bắt đầu từ khâu thu thập yêu cầu và nhanh chóng bước vào giai đoạn giải pháp.",
+    "primary": "Liên Hệ Ngay",
+    "secondary": "Tìm Hiểu Dịch Vụ"
+  },
+  "footer": {
+    "desc": "Cung cấp giải pháp phát triển website, dịch vụ khách hàng AI và tự động hóa doanh nghiệp. Giúp thương hiệu giao tiếp rõ ràng hơn, phục vụ khách hàng tốt hơn.",
+    "nav_title": "Điều Hướng",
+    "services_title": "Dịch Vụ",
+    "service1": "Website & Hệ Thống Web Doanh Nghiệp",
+    "service2": "Bot Dịch Vụ Khách Hàng AI",
+    "service3": "Hệ Thống Tự Động Trả Lời",
+    "service4": "Tự Động Hóa Doanh Nghiệp",
+    "rights": "© 2026 STARBRIGHT SOLUTIONS · Tất cả quyền được bảo lưu.",
+    "tagline": "Website · Chatbot AI · Tự Động Hóa Doanh Nghiệp"
+  }
+}
