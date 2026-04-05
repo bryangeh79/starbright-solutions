@@ -1,54 +1,7 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'next-i18next/pages';
 import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
-
-const highlights = [
-  {
-    icon: '🕐',
-    title: '24/7 专业技术支援',
-    desc: '全天候技术团队待命，无论何时遇到 API 集成问题、系统故障或性能瓶颈，我们都能快速响应，确保业务不间断运行。',
-  },
-  {
-    icon: '📄',
-    title: '完整 API 文档',
-    desc: '提供详尽、结构清晰的 API 文档，涵盖端点说明、参数定义、请求示例与错误代码，帮助开发团队快速理解并高效集成。',
-  },
-  {
-    icon: '🧪',
-    title: '沙箱测试环境',
-    desc: '独立沙箱环境让开发者在不影响生产系统的前提下充分测试集成方案，降低上线风险，保障集成质量。',
-  },
-  {
-    icon: '⚡',
-    title: '快速故障排查',
-    desc: '专业技术工程师提供实时故障诊断与修复支持，精准定位问题根因，最短时间内恢复系统正常运行。',
-  },
-  {
-    icon: '🔧',
-    title: '集成咨询顾问',
-    desc: '从架构规划到具体实施，提供一对一技术咨询，帮助您制定最优的 API 集成方案，避免常见坑点与性能隐患。',
-  },
-  {
-    icon: '📈',
-    title: '性能优化建议',
-    desc: '基于实际业务场景，提供针对性的 API 调用优化策略，提升系统响应速度与稳定性，支持业务规模扩展。',
-  },
-];
-
-const features = [
-  { icon: '🔌', title: 'API 集成支持', desc: '协助完成游戏供应商 API 接入，提供分步指导与代码示例，快速完成对接。', color: '#22c55e' },
-  { icon: '📋', title: '技术文档库', desc: '完整的 API 参考文档，持续更新维护，支持团队随时查阅与自助解决问题。', color: '#06b6d4' },
-  { icon: '🧪', title: '沙箱环境', desc: '专用测试沙箱，模拟真实生产环境，支持全面的集成验证与压力测试。', color: '#a78bfa' },
-  { icon: '🛡️', title: '实时故障排查', desc: '7×24 小时故障响应机制，技术工程师实时协助定位与解决生产问题。', color: '#f97316' },
-  { icon: '📊', title: 'API 性能监控', desc: '实时监控 API 调用状态与响应时间，主动预警潜在问题，保障系统稳定。', color: '#ec4899' },
-];
-
-const audiences = [
-  '需要对接游戏供应商 API 的开发团队',
-  '遇到技术集成问题的运营商',
-  '希望优化现有 API 性能的企业',
-  '需要专业技术顾问支持的项目团队',
-];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -67,18 +20,44 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function ApiSupportPage() {
+  const { t } = useTranslation('common');
+
+  const highlights = [
+    { icon: '🕐', title: t('api_page.h1_title'), desc: t('api_page.h1_desc') },
+    { icon: '📄', title: t('api_page.h2_title'), desc: t('api_page.h2_desc') },
+    { icon: '🧪', title: t('api_page.h3_title'), desc: t('api_page.h3_desc') },
+    { icon: '⚡', title: t('api_page.h4_title'), desc: t('api_page.h4_desc') },
+    { icon: '🔧', title: t('api_page.h5_title'), desc: t('api_page.h5_desc') },
+    { icon: '📈', title: t('api_page.h6_title'), desc: t('api_page.h6_desc') },
+  ];
+
+  const features = [
+    { icon: '🔌', title: t('api_page.f1_title'), desc: t('api_page.f1_desc'), color: '#22c55e' },
+    { icon: '📋', title: t('api_page.f2_title'), desc: t('api_page.f2_desc'), color: '#06b6d4' },
+    { icon: '🧪', title: t('api_page.f3_title'), desc: t('api_page.f3_desc'), color: '#a78bfa' },
+    { icon: '🛡️', title: t('api_page.f4_title'), desc: t('api_page.f4_desc'), color: '#f97316' },
+    { icon: '📊', title: t('api_page.f5_title'), desc: t('api_page.f5_desc'), color: '#ec4899' },
+  ];
+
+  const audiences = [
+    t('api_page.a1'),
+    t('api_page.a2'),
+    t('api_page.a3'),
+    t('api_page.a4'),
+  ];
+
   return (
     <>
       <Head>
-        <title>API Support | STARBRIGHT SOLUTIONS</title>
-        <meta name="description" content="API Support — 游戏 API 技术支援，提供 24/7 专业技术支持、详细文档、沙箱环境与实时故障排查服务。" />
-        <meta property="og:title" content="API Support | STARBRIGHT SOLUTIONS" />
-        <meta property="og:description" content="24/7 游戏 API 技术支援，协助运营商快速集成、处理技术问题、优化系统性能。" />
+        <title>{t('api_page.meta_title')}</title>
+        <meta name="description" content={t('api_page.meta_desc')} />
+        <meta property="og:title" content={t('api_page.meta_title')} />
+        <meta property="og:description" content={t('api_page.og_desc')} />
         <meta property="og:image" content="/images/Products_API.png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="API Support | STARBRIGHT SOLUTIONS" />
-        <meta name="twitter:description" content="游戏 API 技术支援 — 24/7 支持，完整文档，沙箱环境。" />
+        <meta name="twitter:title" content={t('api_page.meta_title')} />
+        <meta name="twitter:description" content={t('api_page.tw_desc')} />
         <meta name="twitter:image" content="/images/Products_API.png" />
       </Head>
 
@@ -120,7 +99,7 @@ export default function ApiSupportPage() {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M19 12H5M12 19l-7-7 7-7" />
                 </svg>
-                产品列表
+                {t('api_page.breadcrumb')}
               </a>
             </motion.div>
 
@@ -135,18 +114,18 @@ export default function ApiSupportPage() {
               }}>
                 <motion.span animate={{ opacity: [1, 0.3, 1] }} transition={{ duration: 1.6, repeat: Infinity }}
                   style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#4ade80' }} />
-                ⚙️ 开发中
+                {t('api_page.badge_dev')}
               </span>
               <span style={{
                 padding: '5px 14px', borderRadius: '999px',
                 background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)',
                 color: '#a5b4fc', fontSize: '12px', fontWeight: 500, fontFamily: 'Inter',
-              }}>24/7 支持</span>
+              }}>{t('api_page.badge_support')}</span>
               <span style={{
                 padding: '5px 14px', borderRadius: '999px',
                 background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
                 color: 'rgba(255,255,255,0.5)', fontSize: '12px', fontFamily: 'Inter',
-              }}>沙箱环境</span>
+              }}>{t('api_page.badge_sandbox')}</span>
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
@@ -168,7 +147,7 @@ export default function ApiSupportPage() {
                 color: '#22c55e', fontWeight: 500,
                 margin: '0 0 20px 0', letterSpacing: '-0.01em',
               }}>
-              游戏 API 技术支援
+              {t('api_page.tagline')}
             </motion.p>
 
             <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
@@ -178,7 +157,7 @@ export default function ApiSupportPage() {
                 lineHeight: 1.8, color: 'rgba(255,255,255,0.52)',
                 maxWidth: '480px', margin: '0 0 32px 0',
               }}>
-              提供 24/7 专业技术支援与集成咨询，协助运营商快速集成游戏供应商 API、处理技术问题、优化系统性能。包括详细文档、沙箱环境与实时故障排查，让您的技术团队始终有坚实后盾。
+              {t('api_page.hero_desc')}
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
@@ -195,7 +174,7 @@ export default function ApiSupportPage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 0 36px rgba(34,197,94,0.5)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 0 24px rgba(34,197,94,0.35)'; }}>
-                立即咨询
+                {t('api_page.cta_primary')}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </a>
               <a href="/products" style={{
@@ -207,7 +186,7 @@ export default function ApiSupportPage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.color = '#fff'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = 'rgba(255,255,255,0.65)'; }}>
-                查看所有产品
+                {t('api_page.cta_secondary')}
               </a>
             </motion.div>
           </div>
@@ -258,9 +237,9 @@ export default function ApiSupportPage() {
             <h2 style={{
               fontFamily: 'Inter, sans-serif', fontSize: 'clamp(28px, 3vw, 42px)',
               fontWeight: 800, letterSpacing: '-0.03em', color: '#fff', margin: '0 0 16px 0',
-            }}>核心优势</h2>
+            }}>{t('api_page.highlights_title')}</h2>
             <p style={{ fontFamily: 'Inter', fontSize: '16px', color: 'rgba(255,255,255,0.45)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
-              专业的技术支援团队，让 API 集成不再是业务推进的障碍
+              {t('api_page.highlights_subtitle')}
             </p>
           </motion.div>
 
@@ -294,9 +273,9 @@ export default function ApiSupportPage() {
             <h2 style={{
               fontFamily: 'Inter, sans-serif', fontSize: 'clamp(26px, 2.8vw, 38px)',
               fontWeight: 800, letterSpacing: '-0.03em', color: '#fff', margin: '0 0 14px 0',
-            }}>服务内容</h2>
+            }}>{t('api_page.features_title')}</h2>
             <p style={{ fontFamily: 'Inter', fontSize: '15px', color: 'rgba(255,255,255,0.4)', maxWidth: '480px', lineHeight: 1.7 }}>
-              从文档到实时支持，全流程陪伴您的技术团队完成集成
+              {t('api_page.features_subtitle')}
             </p>
           </motion.div>
 
@@ -332,9 +311,9 @@ export default function ApiSupportPage() {
               <h2 style={{
                 fontFamily: 'Inter', fontSize: 'clamp(24px, 2.5vw, 36px)',
                 fontWeight: 800, letterSpacing: '-0.03em', color: '#fff', margin: '0 0 16px 0',
-              }}>适合哪些团队？</h2>
+              }}>{t('api_page.audience_title')}</h2>
               <p style={{ fontFamily: 'Inter', fontSize: '15px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.75, margin: '0 0 28px 0' }}>
-                无论您的技术团队规模大小，我们的 API 支援服务都能帮助您高效完成集成，专注于业务本身。
+                {t('api_page.audience_subtitle')}
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {audiences.map((a) => (
@@ -363,10 +342,10 @@ export default function ApiSupportPage() {
               }}>
               <div style={{ fontSize: '36px', marginBottom: '16px' }}>⚙️</div>
               <h3 style={{ fontFamily: 'Inter', fontSize: '18px', fontWeight: 700, color: '#fff', margin: '0 0 12px 0' }}>
-                需要技术集成支援？
+                {t('api_page.cta_box_title')}
               </h3>
               <p style={{ fontFamily: 'Inter', fontSize: '14px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.75, margin: '0 0 24px 0' }}>
-                告诉我们您的集成需求与技术环境，我们将为您制定专属的支援方案，助力项目顺利推进。
+                {t('api_page.cta_box_desc')}
               </p>
               <a href="/contact" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
@@ -375,7 +354,7 @@ export default function ApiSupportPage() {
                 fontSize: '14px', fontWeight: 700,
                 textDecoration: 'none', fontFamily: 'Inter',
               }}>
-                立即咨询
+                {t('api_page.cta_box_btn')}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </a>
             </motion.div>
