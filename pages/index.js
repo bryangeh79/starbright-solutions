@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 // ─── Data ────────────────────────────────────────────────────
 const INITIAL_ACTIVE = new Set([2, 7, 10, 18, 21, 27, 35, 43, 52, 58, 63, 30]);
@@ -991,4 +992,12 @@ export default function HomePage() {
       `}</style>
     </>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
 }
