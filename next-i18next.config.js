@@ -5,4 +5,5 @@ module.exports = {
     locales: ['zh', 'en', 'ms', 'vi', 'id', 'th'],
   },
   localePath: './public/locales',
+  fallbackLng: 'en',
 };

@@ -1,19 +1,7 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'next-i18next/pages';
 import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
-
-const services = [
-  { icon: '🌐', color: '#6366f1', title: '企业官网与网站系统', desc: '围绕品牌展示、产品介绍、客户咨询与后续扩展，建立稳定且适合长期运营的网站基础。' },
-  { icon: '🤖', color: '#8b5cf6', title: 'AI 客服与自动回复', desc: '通过智能问答与自动响应，提升咨询效率，减少重复沟通成本，改善客户体验。' },
-  { icon: '⚡', color: '#06b6d4', title: '业务自动化', desc: '围绕线索流转、任务分派、审批协作与通知同步，帮助企业提升流程效率与管理一致性。' },
-  { icon: '📊', color: '#10b981', title: '数据分析与运营辅助', desc: '整合访问、转化与咨询数据，为运营优化提供更清晰的判断依据。' },
-];
-
-const values = [
-  { num: '01', title: '业务目标优先', desc: '先把业务目标、使用场景和交付边界讲清楚，再决定结构、内容、开发和上线的顺序。减少返工，让每一步都有明确判断依据。' },
-  { num: '02', title: '分清先后顺序', desc: '很多项目的问题，不是做得不够多，而是一开始就没有分清楚先后顺序。我们更在意的是：先解决什么、为什么先做这个、做完之后如何继续。' },
-  { num: '03', title: '支持长期扩展', desc: '项目上线后能不能继续被使用、继续被判断、继续被扩展。后续扩展不会推翻前面的结构，而是在已有判断上继续往前走。' },
-];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -29,6 +17,21 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function AboutPage() {
+  const { t } = useTranslation('common');
+
+  const services = [
+    { icon: '🌐', color: '#6366f1', title: t('about_page.svc1_title'), desc: t('about_page.svc1_desc') },
+    { icon: '🤖', color: '#8b5cf6', title: t('about_page.svc2_title'), desc: t('about_page.svc2_desc') },
+    { icon: '⚡', color: '#06b6d4', title: t('about_page.svc3_title'), desc: t('about_page.svc3_desc') },
+    { icon: '📊', color: '#10b981', title: t('about_page.svc4_title'), desc: t('about_page.svc4_desc') },
+  ];
+
+  const values = [
+    { num: '01', title: t('about_page.val1_title'), desc: t('about_page.val1_desc') },
+    { num: '02', title: t('about_page.val2_title'), desc: t('about_page.val2_desc') },
+    { num: '03', title: t('about_page.val3_title'), desc: t('about_page.val3_desc') },
+  ];
+
   return (
     <>
       <Head>
@@ -75,7 +78,7 @@ export default function AboutPage() {
                 fontWeight: 700, lineHeight: 1.1, letterSpacing: '-0.03em',
                 color: '#fff', margin: '0 0 20px 0',
               }}>
-              关于<br />
+              {t('about_page.hero_title')}<br />
               <span style={{
                 background: 'linear-gradient(135deg, #fff 0%, #a5b4fc 50%, #818cf8 100%)',
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
@@ -88,7 +91,7 @@ export default function AboutPage() {
                 fontFamily: 'Inter', fontSize: '15px', lineHeight: 1.8,
                 color: 'rgba(255,255,255,0.5)', maxWidth: '460px', margin: '0 0 16px 0',
               }}>
-              我们存在的原因很直接：很多企业已经有网站，却没有真正能承接咨询、说明服务、串起流程的数字化入口。
+              {t('about_page.hero_desc1')}
             </motion.p>
             <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.26 }}
@@ -96,7 +99,7 @@ export default function AboutPage() {
                 fontFamily: 'Inter', fontSize: '15px', lineHeight: 1.8,
                 color: 'rgba(255,255,255,0.5)', maxWidth: '460px', margin: '0 0 36px 0',
               }}>
-              我们把官网、系统、AI 交互和自动化放在同一套业务逻辑里，帮企业把对外表达和内部运转接起来。
+              {t('about_page.hero_desc2')}
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
@@ -112,7 +115,7 @@ export default function AboutPage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 0 32px rgba(99,102,241,0.5)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 0 20px rgba(99,102,241,0.35)'; }}>
-                开始咨询
+                {t('about_page.hero_cta1')}
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </a>
               <a href="/solutions" style={{
@@ -123,7 +126,7 @@ export default function AboutPage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.color = '#fff'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = 'rgba(255,255,255,0.65)'; }}>
-                查看服务
+                {t('about_page.hero_cta2')}
               </a>
             </motion.div>
           </div>
@@ -150,19 +153,19 @@ export default function AboutPage() {
                 fontFamily: 'Inter', fontSize: '13px', color: '#818cf8',
                 fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase',
                 margin: '0 0 20px 0',
-              }}>我们在解决什么</p>
+              }}>{t('about_page.brand_label')}</p>
               <p style={{
                 fontFamily: 'Inter', fontSize: '22px', fontWeight: 700,
                 color: '#fff', lineHeight: 1.5, letterSpacing: '-0.02em',
                 margin: '0 0 32px 0',
               }}>
-                帮助企业把分散的展示、咨询、通知和流程，整理成一套更清楚的数字化基础。
+                {t('about_page.brand_title')}
               </p>
               <div style={{ display: 'grid', gap: '14px' }}>
-                {['官网 · 系统 · AI · 自动化，在同一套逻辑里', '先解决什么，比做了多少更重要', '上线后能用，比上线前看起来好更重要'].map((t) => (
-                  <div key={t} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                {[t('about_page.brand_b1'), t('about_page.brand_b2'), t('about_page.brand_b3')].map((item) => (
+                  <div key={item} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <span style={{ color: '#6366f1', marginTop: '2px', flexShrink: 0 }}>◆</span>
-                    <span style={{ fontFamily: 'Inter', fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65 }}>{t}</span>
+                    <span style={{ fontFamily: 'Inter', fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65 }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -179,11 +182,11 @@ export default function AboutPage() {
             <span style={{
               display: 'block', fontSize: '11px', fontWeight: 600, color: '#818cf8',
               letterSpacing: '0.12em', textTransform: 'uppercase', fontFamily: 'Inter', marginBottom: '14px',
-            }}>What We Do</span>
+            }}>{t('about_page.services_badge')}</span>
             <h2 style={{
               fontFamily: 'Inter', fontSize: 'clamp(26px, 3vw, 40px)', fontWeight: 700,
               color: '#fff', letterSpacing: '-0.03em', lineHeight: 1.15, margin: 0,
-            }}>服务方向</h2>
+            }}>{t('about_page.services_title')}</h2>
           </motion.div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -223,11 +226,11 @@ export default function AboutPage() {
             <span style={{
               display: 'block', fontSize: '11px', fontWeight: 600, color: '#818cf8',
               letterSpacing: '0.12em', textTransform: 'uppercase', fontFamily: 'Inter', marginBottom: '14px',
-            }}>How We Work</span>
+            }}>{t('about_page.values_badge')}</span>
             <h2 style={{
               fontFamily: 'Inter', fontSize: 'clamp(26px, 3vw, 40px)', fontWeight: 700,
               color: '#fff', letterSpacing: '-0.03em', lineHeight: 1.15, margin: 0,
-            }}>我们的合作方式</h2>
+            }}>{t('about_page.values_title')}</h2>
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }} className="sb-values-grid">
@@ -272,9 +275,9 @@ export default function AboutPage() {
             <h2 style={{
               fontFamily: 'Inter', fontSize: 'clamp(30px, 4vw, 52px)', fontWeight: 800,
               color: '#fff', letterSpacing: '-0.04em', lineHeight: 1.1, margin: '0 0 18px 0',
-            }}>想先确认项目方向？</h2>
+            }}>{t('about_page.cta_title')}</h2>
             <p style={{ fontFamily: 'Inter', fontSize: '15px', color: 'rgba(255,255,255,0.48)', lineHeight: 1.8, margin: '0 0 40px 0' }}>
-              可以先把业务目标、现有情况告诉我们，我们会协助判断最合适的推进方式。
+              {t('about_page.cta_desc')}
             </p>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="/contact" style={{
@@ -285,7 +288,7 @@ export default function AboutPage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 0 36px rgba(99,102,241,0.55)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 0 24px rgba(99,102,241,0.4)'; }}>
-                联系我们
+                {t('about_page.cta_primary')}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </a>
               <a href="/solutions" style={{
@@ -296,7 +299,7 @@ export default function AboutPage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.color = '#fff'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = 'rgba(255,255,255,0.65)'; }}>
-                查看解决方案
+                {t('about_page.cta_secondary')}
               </a>
             </div>
           </motion.div>
