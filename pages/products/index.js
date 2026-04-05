@@ -57,6 +57,74 @@ const products = [
     accentColor: '#d4a528',
     glowColor: 'rgba(212,165,40,0.18)',
   },
+  {
+    id: 'games-aggregation',
+    status: 'building',
+    statusLabel: '🎮 开发中',
+    statusColor: '#06b6d4',
+    statusBg: 'rgba(6,182,212,0.12)',
+    statusBorder: 'rgba(6,182,212,0.3)',
+    logo: null,
+    logoBg: 'linear-gradient(135deg, #051528 0%, #0a2847 40%, #061f3e 100%)',
+    logoFilter: 'drop-shadow(0 0 22px rgba(6,182,212,0.6)) drop-shadow(0 0 44px rgba(34,197,94,0.3))',
+    name: 'Games Aggregation',
+    tagline: '游戏聚合与集成平台',
+    desc: '统一接入 500+ 游戏供应商，覆盖老虎机、真人游戏、快速游戏等多种类型，通过单一 API 实现快速集成与实时数据同步，为运营商提供完整的游戏库解决方案。',
+    tags: ['游戏聚合', '500+ 游戏', '单一API', '多供应商', '实时同步'],
+    accentColor: '#06b6d4',
+    glowColor: 'rgba(6,182,212,0.15)',
+  },
+  {
+    id: 'sportsbook',
+    status: 'building',
+    statusLabel: '⚽ 开发中',
+    statusColor: '#f97316',
+    statusBg: 'rgba(249,115,22,0.12)',
+    statusBorder: 'rgba(249,115,22,0.3)',
+    logo: null,
+    logoBg: 'linear-gradient(135deg, #1c0a00 0%, #3d1500 40%, #2a0d00 100%)',
+    logoFilter: 'drop-shadow(0 0 22px rgba(249,115,22,0.6)) drop-shadow(0 0 44px rgba(59,130,246,0.3))',
+    name: 'Sportsbook',
+    tagline: '体育博彩管理平台',
+    desc: '覆盖全球主流赛事，提供可扩展的体育博彩解决方案。支持赔率实时管理、投注构建器、风险控制与数据分析，帮助运营商快速建立竞争力强的体育博彩业务。',
+    tags: ['体育博彩', '赔率管理', '实时更新', '风险控制', '数据分析'],
+    accentColor: '#f97316',
+    glowColor: 'rgba(249,115,22,0.15)',
+  },
+  {
+    id: 'api-support',
+    status: 'building',
+    statusLabel: '⚙️ 开发中',
+    statusColor: '#22c55e',
+    statusBg: 'rgba(34,197,94,0.12)',
+    statusBorder: 'rgba(34,197,94,0.3)',
+    logo: null,
+    logoBg: 'linear-gradient(135deg, #052e16 0%, #0d472a 40%, #07291e 100%)',
+    logoFilter: 'drop-shadow(0 0 22px rgba(34,197,94,0.6)) drop-shadow(0 0 44px rgba(59,130,246,0.3))',
+    name: 'API Support',
+    tagline: '游戏 API 技术支援',
+    desc: '提供 24/7 专业技术支援与集成咨询，协助运营商快速集成游戏供应商 API、处理技术问题、优化系统性能。包括详细文档、沙箱环境与实时故障排查。',
+    tags: ['24/7 支持', 'API集成', '技术咨询', '沙箱环境', '实时排查'],
+    accentColor: '#22c55e',
+    glowColor: 'rgba(34,197,94,0.15)',
+  },
+  {
+    id: 'payment-gateway',
+    status: 'building',
+    statusLabel: '💳 开发中',
+    statusColor: '#ec4899',
+    statusBg: 'rgba(236,72,153,0.12)',
+    statusBorder: 'rgba(236,72,153,0.3)',
+    logo: null,
+    logoBg: 'linear-gradient(135deg, #1f0531 0%, #4a1449 40%, #36023f 100%)',
+    logoFilter: 'drop-shadow(0 0 22px rgba(236,72,153,0.6)) drop-shadow(0 0 44px rgba(59,130,246,0.3))',
+    name: 'Payment Gateway',
+    tagline: '支付网关集成方案',
+    desc: '集成 200+ 全球支付方式，包括信用卡、电子钱包、加密货币与本地支付渠道。提供安全的交易处理、多币种支持、欺诈检测与完整的财务报表。',
+    tags: ['200+ 支付方式', '多币种', '加密货币', '安全交易', '欺诈检测'],
+    accentColor: '#ec4899',
+    glowColor: 'rgba(236,72,153,0.15)',
+  },
 ];
 
 const fadeUp = {
@@ -140,7 +208,7 @@ export default function ProductsPage() {
             initial="hidden" whileInView="visible"
             viewport={{ once: true }}
             variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '20px' }}
             className="sb-products-index-grid">
             {products.map((p, i) => (
               <motion.div key={p.id} variants={fadeUp} custom={i * 0.1}>
@@ -159,7 +227,7 @@ export default function ProductsPage() {
 
       <style>{`
         @media (max-width: 1024px) {
-          .sb-products-index-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .sb-products-index-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; }
         }
         @media (max-width: 640px) {
           .sb-products-index-grid { grid-template-columns: 1fr !important; }

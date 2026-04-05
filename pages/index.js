@@ -289,27 +289,53 @@ export default function HomePage() {
         background: '#000',
         overflow: 'hidden',
       }}>
-        <div className="bg-grid-dots" style={{ position: 'absolute', inset: 0 }} />
-        {/* Top orb */}
-        <div style={{
-          position: 'absolute', top: '20%', left: '8%',
-          width: '600px', height: '600px',
-          background: 'radial-gradient(circle, rgba(99,102,241,0.14) 0%, transparent 70%)',
-          pointerEvents: 'none',
-        }} />
-        {/* Bottom right orb */}
-        <div style={{
-          position: 'absolute', bottom: '10%', right: '8%',
-          width: '420px', height: '420px',
-          background: 'radial-gradient(circle, rgba(139,92,246,0.09) 0%, transparent 70%)',
-          pointerEvents: 'none',
-        }} />
+        {/* 背景底色 */}
+        <div style={{ position: 'absolute', inset: 0, background: '#020510', zIndex: 0 }} />
+
+        {/* 星点层 - 大中小混合，向上流动 */}
+        {[...Array(120)].map((_, i) => {
+          const x = ((i * 137.5) % 100);
+          const startY = ((i * 97.3) % 100);
+          // 大中小三种尺寸
+          const sizeType = i % 7;
+          const size = sizeType === 0 ? 6 : sizeType <= 2 ? 4 : 2;
+          const opacity = size === 3 ? 0.9 : size === 2 ? 0.6 : 0.35;
+          const duration = 6 + (i % 10); // 6-15秒不等
+          const delay = -((i * 1.3) % 15); // 错开起始点
+          return (
+            <div key={`star-${i}`} style={{
+              position: 'absolute',
+              width: size + 'px', height: size + 'px',
+              borderRadius: '50%',
+              background: size === 3 ? 'rgba(255,255,255,1)' : size === 2 ? 'rgba(200,230,255,0.9)' : 'rgba(180,210,255,0.7)',
+              boxShadow: size === 3 ? '0 0 4px rgba(255,255,255,0.8)' : 'none',
+              left: x + '%',
+              bottom: '-4px',
+              animation: `starFloat ${duration}s linear ${delay}s infinite`,
+              zIndex: 0,
+            }} />
+          );
+        })}
+
+        {/* 流星 */}
+        {[...Array(3)].map((_, i) => (
+          <div key={`meteor-${i}`} style={{
+            position: 'absolute',
+            width: '120px', height: '1px',
+            background: 'linear-gradient(90deg, rgba(255,255,255,0), rgba(6,182,212,0.8), rgba(255,255,255,0))',
+            top: (15 + i * 25) + '%',
+            left: '-120px',
+            transform: 'rotate(-20deg)',
+            animation: `shootingStar 8s linear ${i * 3}s infinite`,
+            zIndex: 0,
+          }} />
+        ))}
 
         <div style={{
           position: 'relative', maxWidth: '1200px', margin: '0 auto',
           padding: '120px 24px 80px', width: '100%',
           display: 'grid', gridTemplateColumns: '1fr 1fr',
-          gap: '56px', alignItems: 'center', boxSizing: 'border-box',
+          gap: '56px', alignItems: 'center', boxSizing: 'border-box', zIndex: 10,
         }} className="sb-hero-grid">
 
           {/* Left */}
@@ -391,7 +417,7 @@ export default function HomePage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="sb-hero-visual">
+            className="hero-visual">
             <AIGrid />
           </motion.div>
         </div>
@@ -966,6 +992,54 @@ export default function HomePage() {
       </section>
 
       <style>{`
+        @keyframes starFloat {
+          0%   { transform: translateY(0) translateX(0px); opacity: 0; }
+          5%   { opacity: 1; }
+          50%  { transform: translateY(-50vh) translateX(15px); opacity: 1; }
+          90%  { opacity: 0.3; }
+          100% { transform: translateY(-105vh) translateX(25px); opacity: 0; }
+        }
+        @keyframes shootingStar {
+          0%   { left: -120px; opacity: 0; }
+          5%   { opacity: 1; }
+          30%  { left: 110%; opacity: 0; }
+          100% { left: 110%; opacity: 0; }
+        }
+        @keyframes auroraA {
+          0%   { transform: translate(0px, 0px) scale(1); opacity: 1; }
+          33%  { transform: translate(-120px, 80px) scale(1.2); opacity: 0.8; }
+          66%  { transform: translate(60px, -60px) scale(0.9); opacity: 1; }
+          100% { transform: translate(0px, 0px) scale(1); opacity: 1; }
+        }
+        @keyframes auroraB {
+          0%   { transform: translate(0px, 0px) scale(1); opacity: 1; }
+          33%  { transform: translate(100px, -80px) scale(1.15); opacity: 0.75; }
+          66%  { transform: translate(-80px, 60px) scale(0.95); opacity: 1; }
+          100% { transform: translate(0px, 0px) scale(1); opacity: 1; }
+        }
+        @keyframes auroraC {
+          0%   { transform: translate(0px, 0px) scale(1); opacity: 0.8; }
+          50%  { transform: translate(-150px, -100px) scale(1.3); opacity: 0.5; }
+          100% { transform: translate(0px, 0px) scale(1); opacity: 0.8; }
+        }
+        @keyframes heroParticleFloat {
+          0% { transform: translateY(0) translateX(0px); opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { transform: translateY(-100vh) translateX(60px); opacity: 0; }
+        }
+        @keyframes floatSphere1 {
+          0%, 100% { transform: translate(0px, 0px) scale(1); }
+          50% { transform: translate(-30px, -50px) scale(1.1); }
+        }
+        @keyframes floatSphere2 {
+          0%, 100% { transform: translate(0px, 0px) scale(1); }
+          50% { transform: translate(40px, 40px) scale(1.15); }
+        }
+        @keyframes floatSphere3 {
+          0%, 100% { transform: translate(-50%, -50%) scale(1); }
+          50% { transform: translate(-50%, -50%) scale(0.9); }
+        }
         @media (max-width: 768px) {
           .sb-hero-section { min-height: auto !important; padding: 0 !important; }
           .sb-hero-grid { grid-template-columns: 1fr !important; gap: 0 !important; padding: 100px 20px 60px !important; }
