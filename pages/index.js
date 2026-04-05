@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 // ─── Data ────────────────────────────────────────────────────
 const INITIAL_ACTIVE = new Set([2, 7, 10, 18, 21, 27, 35, 43, 52, 58, 63, 30]);
