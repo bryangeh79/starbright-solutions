@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
+import { appWithTranslation } from 'next-i18next';
 import '../styles/globals.css';
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
@@ -19,7 +20,7 @@ const pageVariants = {
   exit: { opacity: 0, transition: { duration: 0.15, ease: 'easeIn' } },
 };
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   return (
@@ -68,3 +69,5 @@ export default function MyApp({ Component, pageProps }) {
     </>
   );
 }
+
+export default appWithTranslation(MyApp);
