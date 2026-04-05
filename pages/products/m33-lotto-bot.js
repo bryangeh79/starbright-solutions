@@ -276,29 +276,16 @@ export default function M33LottoBotPage() {
             {/* Logo card */}
             <div style={{
               width: '100%', borderRadius: '24px',
-              background: 'linear-gradient(135deg, #0a0800 0%, #1c1400 50%, #0f0a00 100%)',
               border: '1px solid rgba(212,165,40,0.2)',
-              padding: '48px 32px',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
               position: 'relative', overflow: 'hidden',
+              aspectRatio: '16/10',
               boxShadow: '0 0 60px rgba(212,165,40,0.1)',
             }}>
-              <div style={{
-                position: 'absolute', inset: 0,
-                background: 'radial-gradient(ellipse at 50% 40%, rgba(212,165,40,0.18) 0%, transparent 65%)',
-              }} />
-              <div style={{
-                position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)',
-                width: '280px', height: '120px',
-                background: 'radial-gradient(ellipse, rgba(0,180,255,0.15) 0%, transparent 70%)',
-              }} />
-              <motion.img
+              <img
                 src="/images/Products_M33.png" alt="M33 Lotto Bot"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 style={{
-                  width: '220px', height: '220px', objectFit: 'contain', position: 'relative', zIndex: 1,
-                  filter: 'drop-shadow(0 0 32px rgba(0,180,255,0.45)) drop-shadow(0 0 64px rgba(212,165,40,0.3))',
+                  position: 'absolute', inset: 0,
+                  width: '100%', height: '100%', objectFit: 'cover',
                 }} />
             </div>
 

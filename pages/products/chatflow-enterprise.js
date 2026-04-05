@@ -269,22 +269,19 @@ export default function ChatFlowEnterprisePage() {
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
-                style={{
-                  width: '260px', height: '260px', borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #0a0a00 0%, #1a1200 100%)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  boxShadow: '0 0 60px rgba(212,165,40,0.3), 0 0 120px rgba(6,182,212,0.1)',
+              <div style={{
+                  width: '100%', borderRadius: '24px',
                   border: '1px solid rgba(212,165,40,0.2)',
+                  position: 'relative', overflow: 'hidden',
+                  aspectRatio: '16/10',
+                  boxShadow: '0 0 60px rgba(212,165,40,0.15)',
                 }}>
                 <img src="/images/Products_ChatFlowEnterprise.png" alt="ChatFlow Enterprise"
                   style={{
-                    width: '200px', height: '200px', objectFit: 'contain',
-                    filter: 'drop-shadow(0 0 20px rgba(212,165,40,0.55)) drop-shadow(0 0 40px rgba(6,182,212,0.2))',
+                    position: 'absolute', inset: 0,
+                    width: '100%', height: '100%', objectFit: 'cover',
                   }} />
-              </motion.div>
+              </div>
 
               {/* Stats */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', width: '100%' }}>
