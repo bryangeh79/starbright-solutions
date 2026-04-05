@@ -137,7 +137,7 @@ export default function ChatFlowEnterprisePage() {
             <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.45)' }}>ChatFlow Enterprise</span>
           </motion.div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 420px', gap: '64px', alignItems: 'center' }}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}
             className="sb-chatflow-hero-grid">
             {/* Left */}
             <div>
