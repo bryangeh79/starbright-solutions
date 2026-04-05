@@ -683,7 +683,7 @@ export default function HomePage() {
           </motion.div>
 
           {/* Products grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', alignItems: 'start' }} className="sb-products-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', alignItems: 'stretch' }} className="sb-products-grid">
 
             {/* ── M33 Lotto Bot ── */}
             <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }}
@@ -691,15 +691,13 @@ export default function HomePage() {
               style={{
                 borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)',
                 background: 'rgba(255,255,255,0.03)', overflow: 'hidden',
+                display: 'flex', flexDirection: 'column',
               }}>
 
               {/* Hero visual area */}
               <div style={{
                 background: 'linear-gradient(135deg, #0a0800 0%, #1a1200 50%, #0f0a00 100%)',
-                padding: '40px 32px 32px',
-                display: 'flex', flexDirection: 'column', alignItems: 'center',
-                position: 'relative', overflow: 'hidden', minHeight: '300px',
-                justifyContent: 'center', gap: '24px',
+                position: 'relative', overflow: 'hidden', height: '320px',
               }}>
                 {/* Gold glow */}
                 <div style={{
@@ -727,7 +725,7 @@ export default function HomePage() {
               </div>
 
               {/* Content */}
-              <div style={{ padding: '28px' }}>
+              <div style={{ padding: '28px', flex: 1 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
                   <span style={{
                     padding: '3px 10px', borderRadius: '999px',
@@ -784,14 +782,13 @@ export default function HomePage() {
                 border: '1px solid rgba(99,102,241,0.2)',
                 background: 'linear-gradient(135deg, rgba(99,102,241,0.05) 0%, rgba(139,92,246,0.03) 100%)',
                 overflow: 'hidden',
+                display: 'flex', flexDirection: 'column',
               }}>
 
               {/* Visual area */}
               <div style={{
                 background: 'linear-gradient(135deg, #0a0a18 0%, #12102a 100%)',
-                padding: '40px 24px 32px',
-                minHeight: '320px', position: 'relative', overflow: 'hidden',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                height: '320px', position: 'relative', overflow: 'hidden',
               }}>
                 {/* Scene image */}
                 <img
@@ -805,7 +802,7 @@ export default function HomePage() {
               </div>
 
               {/* Content */}
-              <div style={{ padding: '28px' }}>
+              <div style={{ padding: '28px', flex: 1 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
                   <span style={{
                     padding: '3px 10px', borderRadius: '999px',
