@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 const services = [
   { icon: '🌐', color: '#6366f1', title: '企业官网与网站系统', desc: '围绕品牌展示、产品介绍、客户咨询与后续扩展，建立稳定且适合长期运营的网站基础。' },
@@ -18,6 +19,14 @@ const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: (d = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.6, delay: d, ease: [0.22, 1, 0.36, 1] } }),
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
 
 export default function AboutPage() {
   return (

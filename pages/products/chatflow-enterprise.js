@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 const accentColor = '#d4a528';
 const accentGlow = 'rgba(212,165,40,0.4)';
@@ -82,6 +83,14 @@ const fadeUp = {
   hidden: { opacity: 0, y: 20 },
   visible: (d = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.55, delay: d, ease: [0.22, 1, 0.36, 1] } }),
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
 
 export default function ChatFlowEnterprisePage() {
   return (

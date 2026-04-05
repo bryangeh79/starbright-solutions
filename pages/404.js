@@ -1,6 +1,15 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
 
 export default function NotFound() {
   const [mounted, setMounted] = useState(false);

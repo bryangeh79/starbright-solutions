@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 const pageTitle = 'STARBRIGHT SOLUTIONS | 联系我们：项目咨询与合作入口';
 const pageDescription =
@@ -66,6 +67,14 @@ const fadeUp = {
     transition: { duration: 0.6, delay: d, ease: [0.22, 1, 0.36, 1] },
   }),
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
 
 export default function ContactPage() {
   const handleSubmit = (event) => {

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 const pageTitle = 'STARBRIGHT SOLUTIONS | FAQ 常见问题：服务流程与合作说明';
 const pageDescription =
@@ -195,6 +196,14 @@ function FAQAccordion({ items, color }) {
       })}
     </div>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
 }
 
 export default function FAQPage() {
