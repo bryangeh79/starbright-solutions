@@ -15,16 +15,33 @@
     "title3": "Platform Digital Profesional",
     "desc": "STARBRIGHT SOLUTIONS membina laman web yang lebih jelas, perkhidmatan pelanggan AI, dan sistem automasi — membantu jenama berkomunikasi dengan lebih baik, melayani pelanggan dengan lebih pantas.",
     "cta_primary": "Dapatkan Cadangan",
-    "cta_secondary": "Lihat Perkhidmatan Kami"
+    "cta_secondary": "Lihat Perkhidmatan Kami",
+    "marquee_items": "Laman Web Korporat|Chatbot AI|Automasi Perniagaan|Transformasi Digital|Web Development|AI Automation|Digital Solutions|Penukaran Petunjuk|Naik Taraf Jenama"
   },
   "services": {
     "badge": "Perkhidmatan Utama",
     "title": "Gambaran Keseluruhan Perkhidmatan",
     "desc": "Empat teras utama pendigitalan perusahaan — dari laman web hingga chatbot AI, sistem balas automatik hingga automasi aliran kerja penuh.",
-    "web": { "title": "Laman Web Perniagaan & Sistem Web", "desc": "Bina laman web yang stabil, profesional, dan boleh dikembangkan yang mengimbangi pembentangan jenama, penukaran perniagaan, dan operasi jangka panjang.", "tag": "Web Dev" },
-    "ai": { "title": "Bot Perkhidmatan Pelanggan AI", "desc": "Kendalikan pertanyaan biasa, pengenalan produk, dan respons pra-jualan secara automatik — meningkatkan kecekapan perkhidmatan dan pengalaman pelanggan.", "tag": "AI" },
-    "auto": { "title": "Sistem Balas Automatik", "desc": "Liputi borang, temujanji, pemberitahuan, dan respons senario tetap — mengurangkan balas yang terlepas dan pengendalian berulang.", "tag": "Automation" },
-    "workflow": { "title": "Penyelesaian Automasi Perniagaan", "desc": "Hubungkan aliran petunjuk, penugasan tugas, kerjasama kelulusan, dan banyak lagi — menjadikan proses perniagaan lebih stabil dan terkawal.", "tag": "Workflow" }
+    "web": {
+      "title": "Laman Web Perniagaan & Sistem Web",
+      "desc": "Bina laman web yang stabil, profesional, dan boleh dikembangkan yang mengimbangi pembentangan jenama, penukaran perniagaan, dan operasi jangka panjang.",
+      "tag": "Web Dev"
+    },
+    "ai": {
+      "title": "Bot Perkhidmatan Pelanggan AI",
+      "desc": "Kendalikan pertanyaan biasa, pengenalan produk, dan respons pra-jualan secara automatik — meningkatkan kecekapan perkhidmatan dan pengalaman pelanggan.",
+      "tag": "AI"
+    },
+    "auto": {
+      "title": "Sistem Balas Automatik",
+      "desc": "Liputi borang, temujanji, pemberitahuan, dan respons senario tetap — mengurangkan balas yang terlepas dan pengendalian berulang.",
+      "tag": "Automation"
+    },
+    "workflow": {
+      "title": "Penyelesaian Automasi Perniagaan",
+      "desc": "Hubungkan aliran petunjuk, penugasan tugas, kerjasama kelulusan, dan banyak lagi — menjadikan proses perniagaan lebih stabil dan terkawal.",
+      "tag": "Workflow"
+    }
   },
   "stats": {
     "projects": "Projek Berjaya Dihantar",
@@ -36,10 +53,22 @@
     "badge": "Cara Kami Bekerja",
     "title": "Proses Kerjasama Yang Jelas",
     "desc": "Setiap langkah mempunyai penyerahan dan kriteria keputusan yang jelas, menjadikan proses lebih lancar.",
-    "s1": { "title": "Penemuan", "desc": "Sahkan matlamat perniagaan, aset sedia ada, dan skop projek. Tetapkan piawaian penghantaran yang jelas." },
-    "s2": { "title": "Reka Bentuk Penyelesaian", "desc": "Struktur kandungan, sistem visual, dan perancangan ciri semuanya bergerak serentak — menghasilkan pelan tindakan yang boleh dilaksanakan." },
-    "s3": { "title": "Pembangunan & Pelancaran", "desc": "Laksanakan pelan yang dipersetujui melalui pembangunan dan pengujian, kemudian gerakkan — memastikan penghantaran yang stabil dan boleh dipercayai." },
-    "s4": { "title": "Pengoptimuman Berterusan", "desc": "Tindak lanjut maklum balas selepas pelancaran dan terus laraskan serta optimumkan berdasarkan penggunaan sebenar." }
+    "s1": {
+      "title": "Penemuan",
+      "desc": "Sahkan matlamat perniagaan, aset sedia ada, dan skop projek. Tetapkan piawaian penghantaran yang jelas."
+    },
+    "s2": {
+      "title": "Reka Bentuk Penyelesaian",
+      "desc": "Struktur kandungan, sistem visual, dan perancangan ciri semuanya bergerak serentak — menghasilkan pelan tindakan yang boleh dilaksanakan."
+    },
+    "s3": {
+      "title": "Pembangunan & Pelancaran",
+      "desc": "Laksanakan pelan yang dipersetujui melalui pembangunan dan pengujian, kemudian gerakkan — memastikan penghantaran yang stabil dan boleh dipercayai."
+    },
+    "s4": {
+      "title": "Pengoptimuman Berterusan",
+      "desc": "Tindak lanjut maklum balas selepas pelancaran dan terus laraskan serta optimumkan berdasarkan penggunaan sebenar."
+    }
   },
   "industries": {
     "badge": "Industri",
@@ -52,7 +81,12 @@
     "desc": "Dibina dengan AI terkini dan pengalaman perniagaan dunia nyata bertahun-tahun — produk yang benar-benar berfungsi.",
     "m33_next": "Seterusnya",
     "m33_roadmap": "🚀 Aplikasi Web & Mudah Alih Dalam Pembangunan",
-    "chat_cta": "Tempah Akses Awal"
+    "chat_cta": "Tempah Akses Awal",
+    "m33_home_desc": "Sistem automasi loteri Telegram menyokong pertaruhan automatik, pertanyaan cabutan langsung, laporan penyelesaian automatik dan antara muka berbilang bahasa.",
+    "m33_tags": "Pertaruhan Auto|Cabutan Langsung|Penyelesaian Auto|Berbilang Bahasa|Kawalan Admin|Eksport Laporan",
+    "chat_status": "⚡ Dalam Pembangunan",
+    "chat_home_desc": "Sistem perkhidmatan pelanggan AI — mengendalikan pertanyaan berulang, panduan pra-jualan dan FAQ secara automatik. Respons 7×24 jam.",
+    "chat_tags": "NLU|Berbilang Saluran|Respons 7×24|Pangkalan Pengetahuan|Serah Manusia|Analitik"
   },
   "solutions_page": {
     "hero_title1": "Jelaskan Penyelesaian Anda,",
@@ -329,7 +363,8 @@
     "title": "Bersedia Untuk Bermula?",
     "desc": "Jika anda mempunyai draf laman web, laman sedia ada, bahan produk, atau matlamat projek — kami boleh bermula dari pengumpulan keperluan dan bergerak pantas ke fasa penyelesaian.",
     "primary": "Hubungi Kami Sekarang",
-    "secondary": "Ketahui Lebih Lanjut"
+    "secondary": "Ketahui Lebih Lanjut",
+    "faq_btn": "Lihat Soalan Lazim"
   },
   "footer": {
     "desc": "Menyediakan pembangunan laman web, perkhidmatan pelanggan AI, dan penyelesaian automasi perniagaan untuk perusahaan.",
@@ -728,5 +763,60 @@
     "cta_box_btn": "Hubungi Kami",
     "cta_primary": "Hubungi Kami",
     "cta_secondary": "Lihat Semua Produk"
+  },
+  "home": {
+    "hero_h1": "Naik Taraf Laman Web\nPerniagaan Anda Kepada\nPlatform Digital Profesional",
+    "hero_desc": "STARBRIGHT SOLUTIONS membina laman web yang lebih jelas, perkhidmatan pelanggan AI, dan sistem automasi — membantu jenama berkomunikasi dengan lebih baik, melayani pelanggan dengan lebih pantas.",
+    "hero_cta1": "Dapatkan Cadangan",
+    "hero_cta2": "Lihat Perkhidmatan Kami",
+    "marquee_items": "Laman Web Korporat|Chatbot AI|Automasi Perniagaan|Transformasi Digital|Web Development|AI Automation|Digital Solutions|Penukaran Petunjuk|Naik Taraf Jenama",
+    "svc_label": "Perkhidmatan Utama",
+    "svc_title": "Gambaran Keseluruhan Perkhidmatan",
+    "svc_desc": "Empat teras utama pendigitalan perusahaan — dari laman web hingga chatbot AI, sistem balas automatik hingga automasi aliran kerja penuh.",
+    "svc1_title": "Laman Web Perniagaan & Sistem Web",
+    "svc1_desc": "Bina laman web yang stabil, profesional, dan boleh dikembangkan yang mengimbangi pembentangan jenama, penukaran perniagaan, dan operasi jangka panjang.",
+    "svc2_title": "Bot Perkhidmatan Pelanggan AI",
+    "svc2_desc": "Kendalikan pertanyaan biasa, pengenalan produk, dan respons pra-jualan secara automatik — meningkatkan kecekapan perkhidmatan dan pengalaman pelanggan.",
+    "svc3_title": "Sistem Balas Automatik",
+    "svc3_desc": "Liputi borang, temujanji, pemberitahuan, dan respons senario tetap — mengurangkan balas yang terlepas dan pengendalian berulang.",
+    "svc4_title": "Penyelesaian Automasi Perniagaan",
+    "svc4_desc": "Hubungkan aliran petunjuk, penugasan tugas, kerjasama kelulusan, dan banyak lagi — menjadikan proses perniagaan lebih stabil dan terkawal.",
+    "stat1_label": "Projek Berjaya Dihantar",
+    "stat2_label": "Industri Diliputi",
+    "stat3_label": "Kepuasan Pelanggan",
+    "stat4_label": "Jaminan Respons Pantas",
+    "steps_label": "Cara Kami Bekerja",
+    "steps_title": "Proses Kerjasama Yang Jelas",
+    "steps_desc": "Setiap langkah mempunyai penyerahan dan kriteria keputusan yang jelas, menjadikan proses lebih lancar.",
+    "step1_title": "Penemuan",
+    "step1_desc": "Sahkan matlamat perniagaan, aset sedia ada, dan skop projek. Tetapkan piawaian penghantaran yang jelas.",
+    "step2_title": "Reka Bentuk Penyelesaian",
+    "step2_desc": "Struktur kandungan, sistem visual, dan perancangan ciri semuanya bergerak serentak — menghasilkan pelan tindakan yang boleh dilaksanakan.",
+    "step3_title": "Pembangunan & Pelancaran",
+    "step3_desc": "Laksanakan pelan yang dipersetujui melalui pembangunan dan pengujian, kemudian gerakkan — memastikan penghantaran yang stabil dan boleh dipercayai.",
+    "ind_label": "Industri",
+    "ind_title": "Industri Yang Kami Layani",
+    "ind_desc": "Penyelesaian kami telah digunakan di pelbagai industri, membina kepakaran mendalam dalam setiap sektor.",
+    "ind1": "Runcit & Kedai Fizikal",
+    "ind2": "F&B & Industri Perkhidmatan",
+    "ind3": "Pendidikan & Institusi Latihan",
+    "ind4": "Kewangan / Perundingan / Perkhidmatan Profesional",
+    "ind5": "E-Dagang & Perniagaan Dalam Talian",
+    "ind6": "Operasi Dalaman Perusahaan",
+    "products_label": "PRODUK SEBENAR",
+    "products_title": "Produk Pintar Kami",
+    "products_desc": "Dibina dengan AI terkini dan pengalaman perniagaan dunia nyata bertahun-tahun — produk yang benar-benar berfungsi.",
+    "m33_desc": "Sistem automasi loteri Telegram menyokong pertaruhan automatik, pertanyaan cabutan langsung, laporan penyelesaian automatik dan antara muka berbilang bahasa.",
+    "m33_tags": "Pertaruhan Auto|Cabutan Langsung|Penyelesaian Auto|Berbilang Bahasa|Kawalan Admin|Eksport Laporan",
+    "m33_next_label": "Seterusnya",
+    "m33_next": "🚀 Aplikasi Web & Mudah Alih Dalam Pembangunan",
+    "chatbot_status": "⚡ Dalam Pembangunan",
+    "chatbot_desc": "Sistem perkhidmatan pelanggan AI — mengendalikan pertanyaan berulang, panduan pra-jualan dan FAQ secara automatik. Respons 7×24 jam.",
+    "chatbot_tags": "NLU|Berbilang Saluran|Respons 7×24|Pangkalan Pengetahuan|Serah Manusia|Analitik",
+    "chatbot_cta": "Tempah Akses Awal",
+    "cta_title": "Bersedia Untuk Bermula?",
+    "cta_desc": "Jika anda mempunyai draf laman web, laman sedia ada, bahan produk, atau matlamat projek — kami boleh bermula dari pengumpulan keperluan dan bergerak pantas ke fasa penyelesaian.",
+    "cta_btn1": "Hubungi Kami Sekarang",
+    "cta_btn2": "Lihat Soalan Lazim"
   }
 }

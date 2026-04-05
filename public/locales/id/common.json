@@ -15,16 +15,33 @@
     "title3": "Platform Digital Profesional",
     "desc": "STARBRIGHT SOLUTIONS membangun website yang lebih jelas, layanan pelanggan AI, dan sistem otomasi — membantu merek berkomunikasi lebih baik, melayani pelanggan lebih cepat.",
     "cta_primary": "Dapatkan Proposal",
-    "cta_secondary": "Lihat Layanan Kami"
+    "cta_secondary": "Lihat Layanan Kami",
+    "marquee_items": "Website Perusahaan|Chatbot AI|Otomasi Bisnis|Transformasi Digital|Web Development|AI Automation|Digital Solutions|Optimasi Konversi|Upgrade Merek"
   },
   "services": {
     "badge": "Layanan Utama",
     "title": "Gambaran Umum Layanan",
     "desc": "Empat pilar utama digitalisasi perusahaan — dari website hingga chatbot AI, sistem balas otomatis hingga otomasi alur kerja lengkap.",
-    "web": { "title": "Website & Sistem Web Bisnis", "desc": "Bangun website yang stabil, profesional, dan skalabel yang menyeimbangkan presentasi merek, konversi bisnis, dan operasi jangka panjang.", "tag": "Web Dev" },
-    "ai": { "title": "Bot Layanan Pelanggan AI", "desc": "Tangani pertanyaan umum, pengenalan produk, dan respons pra-penjualan secara otomatis — meningkatkan efisiensi layanan dan pengalaman pelanggan.", "tag": "AI" },
-    "auto": { "title": "Sistem Balas Otomatis", "desc": "Mencakup formulir, janji temu, notifikasi, dan respons skenario tetap — mengurangi balasan yang terlewat dan penanganan berulang.", "tag": "Automation" },
-    "workflow": { "title": "Solusi Otomasi Bisnis", "desc": "Hubungkan alur prospek, penugasan tugas, kolaborasi persetujuan, dan lainnya — membuat proses bisnis lebih stabil dan terkontrol.", "tag": "Workflow" }
+    "web": {
+      "title": "Website & Sistem Web Bisnis",
+      "desc": "Bangun website yang stabil, profesional, dan skalabel yang menyeimbangkan presentasi merek, konversi bisnis, dan operasi jangka panjang.",
+      "tag": "Web Dev"
+    },
+    "ai": {
+      "title": "Bot Layanan Pelanggan AI",
+      "desc": "Tangani pertanyaan umum, pengenalan produk, dan respons pra-penjualan secara otomatis — meningkatkan efisiensi layanan dan pengalaman pelanggan.",
+      "tag": "AI"
+    },
+    "auto": {
+      "title": "Sistem Balas Otomatis",
+      "desc": "Mencakup formulir, janji temu, notifikasi, dan respons skenario tetap — mengurangi balasan yang terlewat dan penanganan berulang.",
+      "tag": "Automation"
+    },
+    "workflow": {
+      "title": "Solusi Otomasi Bisnis",
+      "desc": "Hubungkan alur prospek, penugasan tugas, kolaborasi persetujuan, dan lainnya — membuat proses bisnis lebih stabil dan terkontrol.",
+      "tag": "Workflow"
+    }
   },
   "stats": {
     "projects": "Proyek Berhasil Dikirim",
@@ -36,10 +53,22 @@
     "badge": "Cara Kami Bekerja",
     "title": "Proses Kolaborasi yang Jelas",
     "desc": "Setiap langkah memiliki standar pengiriman dan kriteria keputusan yang jelas, membuat prosesnya lebih lancar.",
-    "s1": { "title": "Penemuan", "desc": "Konfirmasi tujuan bisnis, aset yang ada, dan ruang lingkup proyek. Tetapkan standar pengiriman yang jelas." },
-    "s2": { "title": "Desain Solusi", "desc": "Struktur konten, sistem visual, dan perencanaan fitur semuanya bergerak bersamaan — menghasilkan peta jalan yang dapat dilaksanakan." },
-    "s3": { "title": "Pengembangan & Peluncuran", "desc": "Jalankan rencana yang disepakati melalui pengembangan dan pengujian, lalu deploy — memastikan pengiriman yang stabil dan andal." },
-    "s4": { "title": "Optimisasi Berkelanjutan", "desc": "Tindak lanjuti umpan balik pasca-peluncuran dan terus sesuaikan serta optimalkan berdasarkan penggunaan nyata." }
+    "s1": {
+      "title": "Penemuan",
+      "desc": "Konfirmasi tujuan bisnis, aset yang ada, dan ruang lingkup proyek. Tetapkan standar pengiriman yang jelas."
+    },
+    "s2": {
+      "title": "Desain Solusi",
+      "desc": "Struktur konten, sistem visual, dan perencanaan fitur semuanya bergerak bersamaan — menghasilkan peta jalan yang dapat dilaksanakan."
+    },
+    "s3": {
+      "title": "Pengembangan & Peluncuran",
+      "desc": "Jalankan rencana yang disepakati melalui pengembangan dan pengujian, lalu deploy — memastikan pengiriman yang stabil dan andal."
+    },
+    "s4": {
+      "title": "Optimisasi Berkelanjutan",
+      "desc": "Tindak lanjuti umpan balik pasca-peluncuran dan terus sesuaikan serta optimalkan berdasarkan penggunaan nyata."
+    }
   },
   "industries": {
     "badge": "Industri",
@@ -52,7 +81,12 @@
     "desc": "Dibangun dengan AI mutakhir dan pengalaman bisnis nyata bertahun-tahun — produk yang benar-benar berfungsi.",
     "m33_next": "Selanjutnya",
     "m33_roadmap": "🚀 Aplikasi Web & Mobile Dalam Pengembangan",
-    "chat_cta": "Reservasi Akses Awal"
+    "chat_cta": "Reservasi Akses Awal",
+    "m33_home_desc": "Sistem otomasi lotere Telegram mendukung taruhan otomatis, kueri undian real-time, laporan penyelesaian otomatis dan antarmuka multibahasa.",
+    "m33_tags": "Taruhan Otomatis|Undian Langsung|Penyelesaian Otomatis|Multibahasa|Kontrol Admin|Ekspor Laporan",
+    "chat_status": "⚡ Dalam Pengembangan",
+    "chat_home_desc": "Sistem layanan pelanggan AI enterprise — otomatis menangani pertanyaan berulang, panduan pra-penjualan dan FAQ. Respons 7×24 jam.",
+    "chat_tags": "NLU|Multi-Saluran|Respons 7×24|Basis Pengetahuan|Handoff Manusia|Analitik"
   },
   "solutions_page": {
     "hero_title1": "Komunikasikan Solusi Anda dengan Jelas,",
@@ -329,7 +363,8 @@
     "title": "Siap Memulai?",
     "desc": "Jika Anda memiliki draf website, situs yang ada, materi produk, atau tujuan proyek — kami dapat mulai dari pengumpulan kebutuhan dan bergerak cepat ke fase solusi.",
     "primary": "Hubungi Kami Sekarang",
-    "secondary": "Pelajari Layanan Kami"
+    "secondary": "Pelajari Layanan Kami",
+    "faq_btn": "Lihat FAQ"
   },
   "footer": {
     "desc": "Menyediakan solusi pengembangan website, layanan pelanggan AI, dan otomasi bisnis untuk perusahaan. Membantu merek berkomunikasi lebih jelas, melayani pelanggan lebih lancar.",
@@ -728,5 +763,60 @@
     "cta_box_btn": "Hubungi Kami",
     "cta_primary": "Hubungi Kami",
     "cta_secondary": "Lihat Semua Produk"
+  },
+  "home": {
+    "hero_h1": "Tingkatkan Website\nBisnis Anda Menjadi\nPlatform Digital Profesional",
+    "hero_desc": "STARBRIGHT SOLUTIONS membangun website yang lebih jelas, layanan pelanggan AI, dan sistem otomasi — membantu merek berkomunikasi lebih baik, melayani pelanggan lebih cepat.",
+    "hero_cta1": "Dapatkan Proposal",
+    "hero_cta2": "Lihat Layanan Kami",
+    "marquee_items": "Website Perusahaan|Chatbot AI|Otomasi Bisnis|Transformasi Digital|Web Development|AI Automation|Digital Solutions|Optimasi Konversi|Upgrade Merek",
+    "svc_label": "Layanan Utama",
+    "svc_title": "Gambaran Umum Layanan",
+    "svc_desc": "Empat pilar utama digitalisasi perusahaan — dari website hingga chatbot AI, sistem balas otomatis hingga otomasi alur kerja lengkap.",
+    "svc1_title": "Website & Sistem Web Bisnis",
+    "svc1_desc": "Bangun website yang stabil, profesional, dan skalabel yang menyeimbangkan presentasi merek, konversi bisnis, dan operasi jangka panjang.",
+    "svc2_title": "Bot Layanan Pelanggan AI",
+    "svc2_desc": "Tangani pertanyaan umum, pengenalan produk, dan respons pra-penjualan secara otomatis — meningkatkan efisiensi layanan dan pengalaman pelanggan.",
+    "svc3_title": "Sistem Balas Otomatis",
+    "svc3_desc": "Mencakup formulir, janji temu, notifikasi, dan respons skenario tetap — mengurangi balasan yang terlewat dan penanganan berulang.",
+    "svc4_title": "Solusi Otomasi Bisnis",
+    "svc4_desc": "Hubungkan alur prospek, penugasan tugas, kolaborasi persetujuan, dan lainnya — membuat proses bisnis lebih stabil dan terkontrol.",
+    "stat1_label": "Proyek Berhasil Dikirim",
+    "stat2_label": "Industri Tercakup",
+    "stat3_label": "Kepuasan Klien",
+    "stat4_label": "Janji Respons Cepat",
+    "steps_label": "Cara Kami Bekerja",
+    "steps_title": "Proses Kolaborasi yang Jelas",
+    "steps_desc": "Setiap langkah memiliki standar pengiriman dan kriteria keputusan yang jelas, membuat prosesnya lebih lancar.",
+    "step1_title": "Penemuan",
+    "step1_desc": "Konfirmasi tujuan bisnis, aset yang ada, dan ruang lingkup proyek. Tetapkan standar pengiriman yang jelas.",
+    "step2_title": "Desain Solusi",
+    "step2_desc": "Struktur konten, sistem visual, dan perencanaan fitur semuanya bergerak bersamaan — menghasilkan peta jalan yang dapat dilaksanakan.",
+    "step3_title": "Pengembangan & Peluncuran",
+    "step3_desc": "Jalankan rencana yang disepakati melalui pengembangan dan pengujian, lalu deploy — memastikan pengiriman yang stabil dan andal.",
+    "ind_label": "Industri",
+    "ind_title": "Industri yang Kami Layani",
+    "ind_desc": "Solusi kami telah diterapkan di berbagai industri, membangun keahlian mendalam di setiap sektor.",
+    "ind1": "Ritel & Toko Fisik",
+    "ind2": "F&B & Industri Layanan",
+    "ind3": "Pendidikan & Lembaga Pelatihan",
+    "ind4": "Keuangan / Konsultasi / Layanan Profesional",
+    "ind5": "E-Commerce & Bisnis Online",
+    "ind6": "Operasi Internal Perusahaan",
+    "products_label": "PRODUK NYATA",
+    "products_title": "Produk Cerdas Kami",
+    "products_desc": "Dibangun dengan AI mutakhir dan pengalaman bisnis nyata bertahun-tahun — produk yang benar-benar berfungsi.",
+    "m33_desc": "Sistem otomasi lotere Telegram mendukung taruhan otomatis, kueri undian real-time, laporan penyelesaian otomatis dan antarmuka multibahasa.",
+    "m33_tags": "Taruhan Otomatis|Undian Langsung|Penyelesaian Otomatis|Multibahasa|Kontrol Admin|Ekspor Laporan",
+    "m33_next_label": "Selanjutnya",
+    "m33_next": "🚀 Aplikasi Web & Mobile Dalam Pengembangan",
+    "chatbot_status": "⚡ Dalam Pengembangan",
+    "chatbot_desc": "Sistem layanan pelanggan AI enterprise — otomatis menangani pertanyaan berulang, panduan pra-penjualan dan FAQ. Respons 7×24 jam.",
+    "chatbot_tags": "NLU|Multi-Saluran|Respons 7×24|Basis Pengetahuan|Handoff Manusia|Analitik",
+    "chatbot_cta": "Reservasi Akses Awal",
+    "cta_title": "Siap Memulai?",
+    "cta_desc": "Jika Anda memiliki draf website, situs yang ada, materi produk, atau tujuan proyek — kami dapat mulai dari pengumpulan kebutuhan dan bergerak cepat ke fase solusi.",
+    "cta_btn1": "Hubungi Kami Sekarang",
+    "cta_btn2": "Lihat FAQ"
   }
 }

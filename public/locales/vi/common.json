@@ -15,16 +15,33 @@
     "title3": "Nền Tảng Số Chuyên Nghiệp",
     "desc": "STARBRIGHT SOLUTIONS xây dựng website rõ ràng hơn, dịch vụ khách hàng AI và hệ thống tự động hóa — giúp thương hiệu giao tiếp tốt hơn, phục vụ khách hàng nhanh hơn.",
     "cta_primary": "Nhận Đề Xuất",
-    "cta_secondary": "Xem Dịch Vụ"
+    "cta_secondary": "Xem Dịch Vụ",
+    "marquee_items": "Website Doanh Nghiệp|Chatbot AI|Tự Động Hóa Kinh Doanh|Chuyển Đổi Số|Web Development|AI Automation|Digital Solutions|Tối Ưu Chuyển Đổi|Nâng Cấp Thương Hiệu"
   },
   "services": {
     "badge": "Dịch Vụ Cốt Lõi",
     "title": "Tổng Quan Dịch Vụ",
     "desc": "Bốn trụ cột chính trong số hóa doanh nghiệp — từ website đến chatbot AI, hệ thống tự động trả lời đến tự động hóa quy trình làm việc hoàn chỉnh.",
-    "web": { "title": "Website & Hệ Thống Web Doanh Nghiệp", "desc": "Xây dựng website ổn định, chuyên nghiệp, có khả năng mở rộng — cân bằng trình bày thương hiệu, chuyển đổi kinh doanh và vận hành lâu dài.", "tag": "Web Dev" },
-    "ai": { "title": "Bot Dịch Vụ Khách Hàng AI", "desc": "Tự động xử lý các câu hỏi thường gặp, giới thiệu sản phẩm và phản hồi tiền bán hàng — nâng cao hiệu quả dịch vụ và trải nghiệm khách hàng.", "tag": "AI" },
-    "auto": { "title": "Hệ Thống Tự Động Trả Lời", "desc": "Bao gồm biểu mẫu, lịch hẹn, thông báo và phản hồi tình huống cố định — giảm bỏ lỡ và xử lý lặp đi lặp lại.", "tag": "Automation" },
-    "workflow": { "title": "Giải Pháp Tự Động Hóa Doanh Nghiệp", "desc": "Kết nối luồng khách hàng tiềm năng, phân công nhiệm vụ, cộng tác phê duyệt và nhiều hơn nữa — làm cho quy trình kinh doanh ổn định và có thể kiểm soát hơn.", "tag": "Workflow" }
+    "web": {
+      "title": "Website & Hệ Thống Web Doanh Nghiệp",
+      "desc": "Xây dựng website ổn định, chuyên nghiệp, có khả năng mở rộng — cân bằng trình bày thương hiệu, chuyển đổi kinh doanh và vận hành lâu dài.",
+      "tag": "Web Dev"
+    },
+    "ai": {
+      "title": "Bot Dịch Vụ Khách Hàng AI",
+      "desc": "Tự động xử lý các câu hỏi thường gặp, giới thiệu sản phẩm và phản hồi tiền bán hàng — nâng cao hiệu quả dịch vụ và trải nghiệm khách hàng.",
+      "tag": "AI"
+    },
+    "auto": {
+      "title": "Hệ Thống Tự Động Trả Lời",
+      "desc": "Bao gồm biểu mẫu, lịch hẹn, thông báo và phản hồi tình huống cố định — giảm bỏ lỡ và xử lý lặp đi lặp lại.",
+      "tag": "Automation"
+    },
+    "workflow": {
+      "title": "Giải Pháp Tự Động Hóa Doanh Nghiệp",
+      "desc": "Kết nối luồng khách hàng tiềm năng, phân công nhiệm vụ, cộng tác phê duyệt và nhiều hơn nữa — làm cho quy trình kinh doanh ổn định và có thể kiểm soát hơn.",
+      "tag": "Workflow"
+    }
   },
   "stats": {
     "projects": "Dự Án Đã Bàn Giao",
@@ -36,10 +53,22 @@
     "badge": "Quy Trình Làm Việc",
     "title": "Quy Trình Hợp Tác Rõ Ràng",
     "desc": "Mỗi bước đều có tiêu chí bàn giao và quyết định rõ ràng, giúp quá trình hợp tác suôn sẻ hơn.",
-    "s1": { "title": "Khám Phá Nhu Cầu", "desc": "Xác nhận mục tiêu kinh doanh, tài sản hiện có và phạm vi dự án. Đặt ra tiêu chuẩn bàn giao rõ ràng." },
-    "s2": { "title": "Thiết Kế Giải Pháp", "desc": "Cấu trúc nội dung, hệ thống hình ảnh và lập kế hoạch tính năng cùng tiến — đưa ra lộ trình thực thi được." },
-    "s3": { "title": "Phát Triển & Ra Mắt", "desc": "Thực hiện kế hoạch đã thống nhất qua phát triển và kiểm thử, sau đó triển khai — đảm bảo bàn giao ổn định và đáng tin cậy." },
-    "s4": { "title": "Tối Ưu Hóa Liên Tục", "desc": "Theo dõi phản hồi sau khi ra mắt và liên tục điều chỉnh, tối ưu dựa trên sử dụng thực tế." }
+    "s1": {
+      "title": "Khám Phá Nhu Cầu",
+      "desc": "Xác nhận mục tiêu kinh doanh, tài sản hiện có và phạm vi dự án. Đặt ra tiêu chuẩn bàn giao rõ ràng."
+    },
+    "s2": {
+      "title": "Thiết Kế Giải Pháp",
+      "desc": "Cấu trúc nội dung, hệ thống hình ảnh và lập kế hoạch tính năng cùng tiến — đưa ra lộ trình thực thi được."
+    },
+    "s3": {
+      "title": "Phát Triển & Ra Mắt",
+      "desc": "Thực hiện kế hoạch đã thống nhất qua phát triển và kiểm thử, sau đó triển khai — đảm bảo bàn giao ổn định và đáng tin cậy."
+    },
+    "s4": {
+      "title": "Tối Ưu Hóa Liên Tục",
+      "desc": "Theo dõi phản hồi sau khi ra mắt và liên tục điều chỉnh, tối ưu dựa trên sử dụng thực tế."
+    }
   },
   "industries": {
     "badge": "Ngành Nghề",
@@ -52,7 +81,12 @@
     "desc": "Được xây dựng với AI tiên tiến và kinh nghiệm kinh doanh thực tế nhiều năm — những sản phẩm thực sự hoạt động hiệu quả.",
     "m33_next": "Tiếp Theo",
     "m33_roadmap": "🚀 Ứng Dụng Web & Di Động Đang Phát Triển",
-    "chat_cta": "Đặt Chỗ Truy Cập Sớm"
+    "chat_cta": "Đặt Chỗ Truy Cập Sớm",
+    "m33_home_desc": "Hệ thống tự động hóa xổ số Telegram hỗ trợ đặt cược tự động, truy vấn kết quả thời gian thực, báo cáo thanh toán tự động và giao diện đa ngôn ngữ.",
+    "m33_tags": "Đặt Cược Tự Động|Xổ Số Trực Tiếp|Thanh Toán Tự Động|Đa Ngôn Ngữ|Kiểm Soát Admin|Xuất Báo Cáo",
+    "chat_status": "⚡ Đang Phát Triển",
+    "chat_home_desc": "Hệ thống CSKH AI doanh nghiệp — tự động xử lý câu hỏi thường xuyên, hướng dẫn tiền bán hàng và FAQ. Phản hồi 7×24 giờ.",
+    "chat_tags": "NLU|Đa Kênh|Phản Hồi 7×24|Cơ Sở Kiến Thức|Chuyển Cho Người|Phân Tích"
   },
   "solutions_page": {
     "hero_title1": "Truyền Đạt Giải Pháp Của Bạn Rõ Ràng,",
@@ -329,7 +363,8 @@
     "title": "Sẵn Sàng Bắt Đầu?",
     "desc": "Nếu bạn có bản thảo website, website hiện có, tài liệu sản phẩm hoặc mục tiêu dự án — chúng tôi có thể bắt đầu từ khâu thu thập yêu cầu và nhanh chóng bước vào giai đoạn giải pháp.",
     "primary": "Liên Hệ Ngay",
-    "secondary": "Tìm Hiểu Dịch Vụ"
+    "secondary": "Tìm Hiểu Dịch Vụ",
+    "faq_btn": "Xem Câu Hỏi Thường Gặp"
   },
   "footer": {
     "desc": "Cung cấp giải pháp phát triển website, dịch vụ khách hàng AI và tự động hóa doanh nghiệp. Giúp thương hiệu giao tiếp rõ ràng hơn, phục vụ khách hàng tốt hơn.",
@@ -728,5 +763,60 @@
     "cta_box_btn": "Liên Hệ Ngay",
     "cta_primary": "Liên Hệ Ngay",
     "cta_secondary": "Xem Tất Cả Sản Phẩm"
+  },
+  "home": {
+    "hero_h1": "Nâng Cấp Website\nDoanh Nghiệp Thành\nNền Tảng Số Chuyên Nghiệp",
+    "hero_desc": "STARBRIGHT SOLUTIONS xây dựng website rõ ràng hơn, dịch vụ khách hàng AI và hệ thống tự động hóa — giúp thương hiệu giao tiếp tốt hơn, phục vụ khách hàng nhanh hơn.",
+    "hero_cta1": "Nhận Đề Xuất",
+    "hero_cta2": "Xem Dịch Vụ",
+    "marquee_items": "Website Doanh Nghiệp|Chatbot AI|Tự Động Hóa Kinh Doanh|Chuyển Đổi Số|Web Development|AI Automation|Digital Solutions|Tối Ưu Chuyển Đổi|Nâng Cấp Thương Hiệu",
+    "svc_label": "Dịch Vụ Cốt Lõi",
+    "svc_title": "Tổng Quan Dịch Vụ",
+    "svc_desc": "Bốn trụ cột chính trong số hóa doanh nghiệp — từ website đến chatbot AI, hệ thống tự động trả lời đến tự động hóa quy trình làm việc hoàn chỉnh.",
+    "svc1_title": "Website & Hệ Thống Web Doanh Nghiệp",
+    "svc1_desc": "Xây dựng website ổn định, chuyên nghiệp, có khả năng mở rộng — cân bằng trình bày thương hiệu, chuyển đổi kinh doanh và vận hành lâu dài.",
+    "svc2_title": "Bot Dịch Vụ Khách Hàng AI",
+    "svc2_desc": "Tự động xử lý các câu hỏi thường gặp, giới thiệu sản phẩm và phản hồi tiền bán hàng — nâng cao hiệu quả dịch vụ và trải nghiệm khách hàng.",
+    "svc3_title": "Hệ Thống Tự Động Trả Lời",
+    "svc3_desc": "Bao gồm biểu mẫu, lịch hẹn, thông báo và phản hồi tình huống cố định — giảm bỏ lỡ và xử lý lặp đi lặp lại.",
+    "svc4_title": "Giải Pháp Tự Động Hóa Doanh Nghiệp",
+    "svc4_desc": "Kết nối luồng khách hàng tiềm năng, phân công nhiệm vụ, cộng tác phê duyệt và nhiều hơn nữa — làm cho quy trình kinh doanh ổn định và có thể kiểm soát hơn.",
+    "stat1_label": "Dự Án Đã Bàn Giao",
+    "stat2_label": "Ngành Nghề Phục Vụ",
+    "stat3_label": "Sự Hài Lòng Khách Hàng",
+    "stat4_label": "Cam Kết Phản Hồi Nhanh",
+    "steps_label": "Quy Trình Làm Việc",
+    "steps_title": "Quy Trình Hợp Tác Rõ Ràng",
+    "steps_desc": "Mỗi bước đều có tiêu chí bàn giao và quyết định rõ ràng, giúp quá trình hợp tác suôn sẻ hơn.",
+    "step1_title": "Khám Phá Nhu Cầu",
+    "step1_desc": "Xác nhận mục tiêu kinh doanh, tài sản hiện có và phạm vi dự án. Đặt ra tiêu chuẩn bàn giao rõ ràng.",
+    "step2_title": "Thiết Kế Giải Pháp",
+    "step2_desc": "Cấu trúc nội dung, hệ thống hình ảnh và lập kế hoạch tính năng cùng tiến — đưa ra lộ trình thực thi được.",
+    "step3_title": "Phát Triển & Ra Mắt",
+    "step3_desc": "Thực hiện kế hoạch đã thống nhất qua phát triển và kiểm thử, sau đó triển khai — đảm bảo bàn giao ổn định và đáng tin cậy.",
+    "ind_label": "Ngành Nghề",
+    "ind_title": "Ngành Nghề Chúng Tôi Phục Vụ",
+    "ind_desc": "Giải pháp của chúng tôi đã được triển khai trên nhiều ngành nghề, xây dựng chuyên môn sâu theo chiều dọc.",
+    "ind1": "Bán Lẻ & Cửa Hàng Vật Lý",
+    "ind2": "F&B & Ngành Dịch Vụ",
+    "ind3": "Giáo Dục & Đào Tạo",
+    "ind4": "Tài Chính / Tư Vấn / Dịch Vụ Chuyên Nghiệp",
+    "ind5": "Thương Mại Điện Tử & Kinh Doanh Trực Tuyến",
+    "ind6": "Vận Hành Nội Bộ Doanh Nghiệp",
+    "products_label": "SẢN PHẨM THỰC TẾ",
+    "products_title": "Sản Phẩm Thông Minh Của Chúng Tôi",
+    "products_desc": "Được xây dựng với AI tiên tiến và kinh nghiệm kinh doanh thực tế nhiều năm — những sản phẩm thực sự hoạt động hiệu quả.",
+    "m33_desc": "Hệ thống tự động hóa xổ số Telegram hỗ trợ đặt cược tự động, truy vấn kết quả thời gian thực, báo cáo thanh toán tự động và giao diện đa ngôn ngữ.",
+    "m33_tags": "Đặt Cược Tự Động|Xổ Số Trực Tiếp|Thanh Toán Tự Động|Đa Ngôn Ngữ|Kiểm Soát Admin|Xuất Báo Cáo",
+    "m33_next_label": "Tiếp Theo",
+    "m33_next": "🚀 Ứng Dụng Web & Di Động Đang Phát Triển",
+    "chatbot_status": "⚡ Đang Phát Triển",
+    "chatbot_desc": "Hệ thống CSKH AI doanh nghiệp — tự động xử lý câu hỏi thường xuyên, hướng dẫn tiền bán hàng và FAQ. Phản hồi 7×24 giờ.",
+    "chatbot_tags": "NLU|Đa Kênh|Phản Hồi 7×24|Cơ Sở Kiến Thức|Chuyển Cho Người|Phân Tích",
+    "chatbot_cta": "Đặt Chỗ Truy Cập Sớm",
+    "cta_title": "Sẵn Sàng Bắt Đầu?",
+    "cta_desc": "Nếu bạn có bản thảo website, website hiện có, tài liệu sản phẩm hoặc mục tiêu dự án — chúng tôi có thể bắt đầu từ khâu thu thập yêu cầu và nhanh chóng bước vào giai đoạn giải pháp.",
+    "cta_btn1": "Liên Hệ Ngay",
+    "cta_btn2": "Xem Câu Hỏi Thường Gặp"
   }
 }

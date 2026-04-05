@@ -15,16 +15,33 @@
     "title3": "Digital Powerhouse",
     "desc": "STARBRIGHT SOLUTIONS builds clearer websites, AI customer service, and automation systems — helping brands communicate better, serve customers faster, and run operations smoother.",
     "cta_primary": "Get a Proposal",
-    "cta_secondary": "View Our Services"
+    "cta_secondary": "View Our Services",
+    "marquee_items": "Corporate Website|AI Chatbot|Business Automation|Digital Transformation|Web Development|AI Automation|Digital Solutions|Lead Conversion|Brand Upgrade"
   },
   "services": {
     "badge": "Core Services",
     "title": "What We Do",
     "desc": "Four core pillars of enterprise digitalization — from websites to AI chatbots, auto-reply systems to full workflow automation.",
-    "web": { "title": "Business Websites & Web Systems", "desc": "Build stable, professional, scalable websites that balance brand presentation, business conversion, and long-term operations.", "tag": "Web Dev" },
-    "ai": { "title": "AI Customer Service Bot", "desc": "Handle common inquiries, product introductions, and pre-sales responses automatically — improving service efficiency and customer experience.", "tag": "AI" },
-    "auto": { "title": "Auto-Reply System", "desc": "Cover forms, appointments, notifications, and fixed-scenario responses — reducing missed replies and repetitive handling.", "tag": "Automation" },
-    "workflow": { "title": "Business Automation Solutions", "desc": "Connect lead flow, task assignment, approval collaboration, and more — making business processes more stable and controllable.", "tag": "Workflow" }
+    "web": {
+      "title": "Business Websites & Web Systems",
+      "desc": "Build stable, professional, scalable websites that balance brand presentation, business conversion, and long-term operations.",
+      "tag": "Web Dev"
+    },
+    "ai": {
+      "title": "AI Customer Service Bot",
+      "desc": "Handle common inquiries, product introductions, and pre-sales responses automatically — improving service efficiency and customer experience.",
+      "tag": "AI"
+    },
+    "auto": {
+      "title": "Auto-Reply System",
+      "desc": "Cover forms, appointments, notifications, and fixed-scenario responses — reducing missed replies and repetitive handling.",
+      "tag": "Automation"
+    },
+    "workflow": {
+      "title": "Business Automation Solutions",
+      "desc": "Connect lead flow, task assignment, approval collaboration, and more — making business processes more stable and controllable.",
+      "tag": "Workflow"
+    }
   },
   "stats": {
     "projects": "Projects Delivered",
@@ -36,10 +53,22 @@
     "badge": "How We Work",
     "title": "A Clear Collaboration Process",
     "desc": "Every step has clear deliverables and decision criteria, making the process smoother and reducing back-and-forth communication.",
-    "s1": { "title": "Discovery", "desc": "Confirm business goals, existing assets, and project scope. Set clear delivery standards to avoid misalignment." },
-    "s2": { "title": "Solution Design", "desc": "Content structure, visual system, and feature planning all move forward together — delivering an executable roadmap." },
-    "s3": { "title": "Development & Launch", "desc": "Execute the agreed plan through development and testing, then deploy — ensuring stable, reliable delivery." },
-    "s4": { "title": "Continuous Optimization", "desc": "Follow up on post-launch feedback and continuously adjust and optimize based on real usage." }
+    "s1": {
+      "title": "Discovery",
+      "desc": "Confirm business goals, existing assets, and project scope. Set clear delivery standards to avoid misalignment."
+    },
+    "s2": {
+      "title": "Solution Design",
+      "desc": "Content structure, visual system, and feature planning all move forward together — delivering an executable roadmap."
+    },
+    "s3": {
+      "title": "Development & Launch",
+      "desc": "Execute the agreed plan through development and testing, then deploy — ensuring stable, reliable delivery."
+    },
+    "s4": {
+      "title": "Continuous Optimization",
+      "desc": "Follow up on post-launch feedback and continuously adjust and optimize based on real usage."
+    }
   },
   "industries": {
     "badge": "Industries",
@@ -52,7 +81,12 @@
     "desc": "Built with cutting-edge AI and years of real-world business experience — products that actually work.",
     "m33_next": "Next Up",
     "m33_roadmap": "🚀 Web & Mobile App in Development",
-    "chat_cta": "Reserve Early Access"
+    "chat_cta": "Reserve Early Access",
+    "m33_home_desc": "Telegram lottery automation system supporting auto-betting, real-time draw queries, auto-settlement reports, and multilingual interface (EN / 中文 / Tiếng Việt).",
+    "m33_tags": "Auto Betting|Live Draw|Auto Settlement|Multilingual|Admin Control|Report Export",
+    "chat_status": "⚡ In Development",
+    "chat_home_desc": "Enterprise AI customer service system — automatically handles high-frequency inquiries, pre-sales guidance, and FAQs. 7×24 response, seamlessly integrated.",
+    "chat_tags": "NLU|Multi-Channel|7×24 Response|Knowledge Base|Human Handoff|Analytics"
   },
   "solutions_page": {
     "hero_title1": "Communicate Your Solutions Clearly,",
@@ -359,7 +393,8 @@
     "title": "Ready to Get Started?",
     "desc": "If you have a website draft, existing site, product materials, or project goals — we can start from requirements gathering and move quickly into the solution phase.",
     "primary": "Contact Us Now",
-    "secondary": "Learn About Our Services"
+    "secondary": "Learn About Our Services",
+    "faq_btn": "View FAQ"
   },
   "footer": {
     "desc": "Providing website development, AI customer service, and business automation solutions for enterprises. Helping brands communicate more clearly, serve customers more smoothly, and run operations more efficiently.",
@@ -758,5 +793,60 @@
     "cta_box_btn": "Contact Us",
     "cta_primary": "Contact Us",
     "cta_secondary": "View All Products"
+  },
+  "home": {
+    "hero_h1": "Upgrade Your\nBusiness Website Into a\nDigital Powerhouse",
+    "hero_desc": "STARBRIGHT SOLUTIONS builds clearer websites, AI customer service, and automation systems — helping brands communicate better, serve customers faster, and run operations smoother.",
+    "hero_cta1": "Get a Proposal",
+    "hero_cta2": "View Our Services",
+    "marquee_items": "Corporate Website|AI Chatbot|Business Automation|Digital Transformation|Web Development|AI Automation|Digital Solutions|Lead Conversion|Brand Upgrade",
+    "svc_label": "Core Services",
+    "svc_title": "What We Do",
+    "svc_desc": "Four core pillars of enterprise digitalization — from websites to AI chatbots, auto-reply systems to full workflow automation.",
+    "svc1_title": "Business Websites & Web Systems",
+    "svc1_desc": "Build stable, professional, scalable websites that balance brand presentation, business conversion, and long-term operations.",
+    "svc2_title": "AI Customer Service Bot",
+    "svc2_desc": "Handle common inquiries, product introductions, and pre-sales responses automatically — improving service efficiency and customer experience.",
+    "svc3_title": "Auto-Reply System",
+    "svc3_desc": "Cover forms, appointments, notifications, and fixed-scenario responses — reducing missed replies and repetitive handling.",
+    "svc4_title": "Business Automation Solutions",
+    "svc4_desc": "Connect lead flow, task assignment, approval collaboration, and more — making business processes more stable and controllable.",
+    "stat1_label": "Projects Delivered",
+    "stat2_label": "Industries Covered",
+    "stat3_label": "Client Satisfaction",
+    "stat4_label": "Fast Response Promise",
+    "steps_label": "How We Work",
+    "steps_title": "A Clear Collaboration Process",
+    "steps_desc": "Every step has clear deliverables and decision criteria, making the process smoother and reducing back-and-forth communication.",
+    "step1_title": "Discovery",
+    "step1_desc": "Confirm business goals, existing assets, and project scope. Set clear delivery standards to avoid misalignment.",
+    "step2_title": "Solution Design",
+    "step2_desc": "Content structure, visual system, and feature planning all move forward together — delivering an executable roadmap.",
+    "step3_title": "Development & Launch",
+    "step3_desc": "Execute the agreed plan through development and testing, then deploy — ensuring stable, reliable delivery.",
+    "ind_label": "Industries",
+    "ind_title": "Industries We Serve",
+    "ind_desc": "Our solutions have been deployed across multiple industries, building deep vertical expertise.",
+    "ind1": "Retail & Physical Stores",
+    "ind2": "F&B & Service Industry",
+    "ind3": "Education & Training Institutions",
+    "ind4": "Finance / Consulting / Professional Services",
+    "ind5": "E-Commerce & Online Business",
+    "ind6": "Enterprise Internal Operations",
+    "products_label": "REAL PRODUCTS",
+    "products_title": "Our Smart Products",
+    "products_desc": "Built with cutting-edge AI and years of real-world business experience — products that actually work.",
+    "m33_desc": "Telegram lottery automation system supporting auto-betting, real-time draw queries, auto-settlement reports, and multilingual interface (EN / 中文 / Tiếng Việt).",
+    "m33_tags": "Auto Betting|Live Draw|Auto Settlement|Multilingual|Admin Control|Report Export",
+    "m33_next_label": "Next Up",
+    "m33_next": "🚀 Web & Mobile App in Development",
+    "chatbot_status": "⚡ In Development",
+    "chatbot_desc": "Enterprise AI customer service system — automatically handles high-frequency inquiries, pre-sales guidance, and FAQs. 7×24 response, seamlessly integrated.",
+    "chatbot_tags": "NLU|Multi-Channel|7×24 Response|Knowledge Base|Human Handoff|Analytics",
+    "chatbot_cta": "Reserve Early Access",
+    "cta_title": "Ready to Get Started?",
+    "cta_desc": "If you have a website draft, existing site, product materials, or project goals — we can start from requirements gathering and move quickly into the solution phase.",
+    "cta_btn1": "Contact Us Now",
+    "cta_btn2": "View FAQ"
   }
 }
