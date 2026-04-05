@@ -50,7 +50,16 @@ export default function Header() {
 
   const switchLocale = (code) => {
     setLangOpen(false);
-    router.push({ pathname, query }, asPath, { locale: code });
+    // Strip any existing non-default locale prefix from current path
+    let path = asPath;
+    const nonDefault = ['en', 'ms', 'vi', 'id', 'th'];
+    for (const loc of nonDefault) {
+      if (path === `/${loc}` || path === `/${loc}/`) { path = '/'; break; }
+      if (path.startsWith(`/${loc}/`)) { path = path.slice(loc.length + 1); break; }
+    }
+    // Build new URL: default locale (zh) has no prefix, others get /{code}/
+    const newPath = code === 'zh' ? path : `/${code}${path === '/' ? '' : path}`;
+    window.location.href = newPath;
   };
 
   const currentLocale = LOCALES.find((l) => l.code === locale) || LOCALES[0];
