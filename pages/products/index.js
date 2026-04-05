@@ -10,7 +10,7 @@ const products = [
     statusColor: '#34d399',
     statusBg: 'rgba(16,185,129,0.12)',
     statusBorder: 'rgba(16,185,129,0.3)',
-    logo: '/images/m33-logo.png',
+    logo: '/images/Products_M33.png',
     logoBg: 'linear-gradient(135deg, #100900 0%, #241800 40%, #1a1100 100%)',
     logoFilter: 'drop-shadow(0 0 18px rgba(0,180,255,0.5)) drop-shadow(0 0 36px rgba(212,165,40,0.55)) drop-shadow(0 0 60px rgba(212,165,40,0.2))',
     name: 'M33 Lotto Bot',
@@ -28,7 +28,7 @@ const products = [
     statusColor: '#a78bfa',
     statusBg: 'rgba(139,92,246,0.12)',
     statusBorder: 'rgba(139,92,246,0.3)',
-    logo: '/images/chatflow-pro-logo.png',
+    logo: '/images/Products_ChatFlowPro.png',
     logoBg: 'linear-gradient(135deg, #06040f 0%, #130b28 40%, #081018 100%)',
     logoFilter: 'drop-shadow(0 0 22px rgba(139,92,246,0.75)) drop-shadow(0 0 44px rgba(6,182,212,0.45)) drop-shadow(0 0 70px rgba(139,92,246,0.2))',
     name: 'ChatFlow Pro',
@@ -46,7 +46,7 @@ const products = [
     statusColor: '#d4a528',
     statusBg: 'rgba(212,165,40,0.12)',
     statusBorder: 'rgba(212,165,40,0.3)',
-    logo: '/images/chatflow-enterprise-logo.png',
+    logo: '/images/Products_ChatFlowEnterprise.png',
     logoBg: 'linear-gradient(135deg, #0e0b00 0%, #201600 40%, #150f00 100%)',
     logoFilter: 'drop-shadow(0 0 22px rgba(212,165,40,0.7)) drop-shadow(0 0 44px rgba(6,182,212,0.3)) drop-shadow(0 0 70px rgba(212,165,40,0.2))',
     name: 'ChatFlow Enterprise',
@@ -64,7 +64,7 @@ const products = [
     statusColor: '#06b6d4',
     statusBg: 'rgba(6,182,212,0.12)',
     statusBorder: 'rgba(6,182,212,0.3)',
-    logo: null,
+    logo: '/images/Products_Games.png',
     logoBg: 'linear-gradient(135deg, #051528 0%, #0a2847 40%, #061f3e 100%)',
     logoFilter: 'drop-shadow(0 0 22px rgba(6,182,212,0.6)) drop-shadow(0 0 44px rgba(34,197,94,0.3))',
     name: 'Games Aggregation',
@@ -81,7 +81,7 @@ const products = [
     statusColor: '#f97316',
     statusBg: 'rgba(249,115,22,0.12)',
     statusBorder: 'rgba(249,115,22,0.3)',
-    logo: null,
+    logo: '/images/Products_Sports.png',
     logoBg: 'linear-gradient(135deg, #1c0a00 0%, #3d1500 40%, #2a0d00 100%)',
     logoFilter: 'drop-shadow(0 0 22px rgba(249,115,22,0.6)) drop-shadow(0 0 44px rgba(59,130,246,0.3))',
     name: 'Sportsbook',
@@ -98,7 +98,7 @@ const products = [
     statusColor: '#22c55e',
     statusBg: 'rgba(34,197,94,0.12)',
     statusBorder: 'rgba(34,197,94,0.3)',
-    logo: null,
+    logo: '/images/Products_API.png',
     logoBg: 'linear-gradient(135deg, #052e16 0%, #0d472a 40%, #07291e 100%)',
     logoFilter: 'drop-shadow(0 0 22px rgba(34,197,94,0.6)) drop-shadow(0 0 44px rgba(59,130,246,0.3))',
     name: 'API Support',
@@ -115,7 +115,7 @@ const products = [
     statusColor: '#ec4899',
     statusBg: 'rgba(236,72,153,0.12)',
     statusBorder: 'rgba(236,72,153,0.3)',
-    logo: null,
+    logo: '/images/Products_Payment.png',
     logoBg: 'linear-gradient(135deg, #1f0531 0%, #4a1449 40%, #36023f 100%)',
     logoFilter: 'drop-shadow(0 0 22px rgba(236,72,153,0.6)) drop-shadow(0 0 44px rgba(59,130,246,0.3))',
     name: 'Payment Gateway',
@@ -272,12 +272,13 @@ function ProductCard({ p }) {
         }} />
         {p.logo ? (
           <Image src={p.logo} alt={p.name}
-            width={140} height={140}
+            width={480} height={200}
             priority={false}
             loading="lazy"
             style={{
-              objectFit: 'contain', position: 'relative', zIndex: 1,
-              filter: p.logoFilter || 'none',
+              objectFit: 'cover', position: 'absolute', inset: 0,
+              width: '100%', height: '100%', zIndex: 1,
+              borderRadius: '0',
             }} />
         ) : (
           <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
