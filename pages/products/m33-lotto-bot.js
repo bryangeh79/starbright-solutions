@@ -271,7 +271,7 @@ export default function M33LottoBotPage() {
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="sb-m33-visual"
-            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '28px' }}>
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '28px', paddingTop: '60px' }}>
 
             {/* Logo card */}
             <div style={{
