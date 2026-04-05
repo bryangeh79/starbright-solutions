@@ -106,12 +106,12 @@ export default function M33LottoBotPage() {
         <meta name="description" content="M33 Lotto Bot — 智能化彩票平台管理机器人，为彩票业务打造的一站式自动化解决方案，结合自动化处理、实时数据整理、报表生成与多角色操作支持。" />
         <meta property="og:title" content="M33 Lotto Bot | STARBRIGHT SOLUTIONS" />
         <meta property="og:description" content="智能化彩票平台管理机器人 — 一站式自动化解决方案，支持 Telegram Bot 多语言操作与实时报表生成。" />
-        <meta property="og:image" content="/images/m33-logo.png" />
+        <meta property="og:image" content="/images/Products_M33.png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="M33 Lotto Bot | STARBRIGHT SOLUTIONS" />
         <meta name="twitter:description" content="智能化彩票平台管理机器人 — 一站式自动化解决方案。" />
-        <meta name="twitter:image" content="/images/m33-logo.png" />
+        <meta name="twitter:image" content="/images/Products_M33.png" />
       </Head>
 
       {/* ── Hero ── */}
@@ -293,7 +293,7 @@ export default function M33LottoBotPage() {
                 background: 'radial-gradient(ellipse, rgba(0,180,255,0.15) 0%, transparent 70%)',
               }} />
               <motion.img
-                src="/images/m33-logo.png" alt="M33 Lotto Bot"
+                src="/images/Products_M33.png" alt="M33 Lotto Bot"
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 style={{

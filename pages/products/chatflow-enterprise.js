@@ -91,10 +91,10 @@ export default function ChatFlowEnterprisePage() {
         <meta name="description" content="ChatFlow Enterprise — AI 客户互动与业务自动化系统，面向成长型企业，涵盖全渠道接入、电商集成、销售转化流程、工作流自动化与深度分析报表。" />
         <meta property="og:title" content="ChatFlow Enterprise | STARBRIGHT SOLUTIONS" />
         <meta property="og:description" content="AI 客户互动与业务自动化系统 — 超越客服回复，深入路由、销售辅助、系统集成与业务增长。" />
-        <meta property="og:image" content="/images/chatflow-enterprise-logo.png" />
+        <meta property="og:image" content="/images/Products_ChatFlowEnterprise.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="ChatFlow Enterprise | STARBRIGHT SOLUTIONS" />
-        <meta name="twitter:image" content="/images/chatflow-enterprise-logo.png" />
+        <meta name="twitter:image" content="/images/Products_ChatFlowEnterprise.png" />
       </Head>
 
       {/* ── Hero ── */}
@@ -279,7 +279,7 @@ export default function ChatFlowEnterprisePage() {
                   boxShadow: '0 0 60px rgba(212,165,40,0.3), 0 0 120px rgba(6,182,212,0.1)',
                   border: '1px solid rgba(212,165,40,0.2)',
                 }}>
-                <img src="/images/chatflow-enterprise-logo.png" alt="ChatFlow Enterprise"
+                <img src="/images/Products_ChatFlowEnterprise.png" alt="ChatFlow Enterprise"
                   style={{
                     width: '200px', height: '200px', objectFit: 'contain',
                     filter: 'drop-shadow(0 0 20px rgba(212,165,40,0.55)) drop-shadow(0 0 40px rgba(6,182,212,0.2))',

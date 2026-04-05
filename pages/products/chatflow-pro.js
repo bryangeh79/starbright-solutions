@@ -78,10 +78,10 @@ export default function ChatFlowProPage() {
         <meta name="description" content="ChatFlow Pro — AI 智能接待与客服自动化系统，为中小企业打造，覆盖 Website、Telegram、WhatsApp、Facebook Messenger，快速响应、线索采集、团队协作一体化。" />
         <meta property="og:title" content="ChatFlow Pro | STARBRIGHT SOLUTIONS" />
         <meta property="og:description" content="AI 智能接待与客服自动化系统 — 更快响应、更清晰的线索、更顺畅的团队交接。" />
-        <meta property="og:image" content="/images/chatflow-pro-logo.png" />
+        <meta property="og:image" content="/images/Products_ChatFlowPro.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="ChatFlow Pro | STARBRIGHT SOLUTIONS" />
-        <meta name="twitter:image" content="/images/chatflow-pro-logo.png" />
+        <meta name="twitter:image" content="/images/Products_ChatFlowPro.png" />
       </Head>
 
       {/* ── Hero ── */}
@@ -259,7 +259,7 @@ export default function ChatFlowProPage() {
                   boxShadow: '0 0 60px rgba(139,92,246,0.3), 0 0 120px rgba(6,182,212,0.15)',
                   border: '1px solid rgba(139,92,246,0.2)',
                 }}>
-                <img src="/images/chatflow-pro-logo.png" alt="ChatFlow Pro"
+                <img src="/images/Products_ChatFlowPro.png" alt="ChatFlow Pro"
                   style={{
                     width: '200px', height: '200px', objectFit: 'contain',
                     filter: 'drop-shadow(0 0 20px rgba(139,92,246,0.6)) drop-shadow(0 0 40px rgba(6,182,212,0.3))',
