@@ -715,45 +715,15 @@ export default function HomePage() {
                   pointerEvents: 'none',
                 }} />
 
-                {/* Logo */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  style={{ position: 'relative', zIndex: 1 }}>
-                  <img
-                    src="/images/m33-logo.png"
-                    alt="M33 Lotto Bot"
-                    style={{
-                      width: '180px', height: '180px',
-                      objectFit: 'contain',
-                      filter: 'drop-shadow(0 0 24px rgba(0,180,255,0.4)) drop-shadow(0 0 48px rgba(212,165,40,0.25))',
-                    }}
-                  />
-                </motion.div>
-
-                {/* Live stats strip */}
-                <div style={{
-                  position: 'relative', zIndex: 1,
-                  display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center',
-                }}>
-                  {[
-                    { label: 'Bot Status', value: 'Online', color: '#34d399' },
-                    { label: 'Languages', value: '3', color: '#fbbf24' },
-                    { label: 'Auto Settle', value: 'Active', color: '#60a5fa' },
-                  ].map((s) => (
-                    <div key={s.label} style={{
-                      padding: '8px 16px', borderRadius: '10px',
-                      background: 'rgba(255,255,255,0.05)',
-                      border: '1px solid rgba(255,255,255,0.1)',
-                      textAlign: 'center', minWidth: '80px',
-                    }}>
-                      <div style={{ fontSize: '9px', color: 'rgba(255,255,255,0.35)', fontFamily: 'monospace', marginBottom: '4px', letterSpacing: '0.06em' }}>{s.label}</div>
-                      <div style={{ fontSize: '14px', fontWeight: 700, color: s.color, fontFamily: 'monospace' }}>{s.value}</div>
-                    </div>
-                  ))}
-                </div>
+                {/* Scene image */}
+                <img
+                  src="/images/Products_M33.png"
+                  alt="M33 Lotto Bot"
+                  style={{
+                    position: 'absolute', inset: 0,
+                    width: '100%', height: '100%', objectFit: 'cover',
+                  }}
+                />
               </div>
 
               {/* Content */}
@@ -823,54 +793,15 @@ export default function HomePage() {
                 minHeight: '320px', position: 'relative', overflow: 'hidden',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}>
-                <div style={{
-                  position: 'absolute', inset: 0,
-                  background: 'radial-gradient(ellipse at center, rgba(99,102,241,0.18) 0%, transparent 70%)',
-                }} />
-
-                {/* Animated chat bubbles */}
-                <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '260px' }}>
-                  {[
-                    { side: 'left', text: '你好，我想了解你们的服务', color: '#fff', bg: 'rgba(255,255,255,0.08)' },
-                    { side: 'right', text: '您好！我是 AI 助手，请问您需要...', color: '#a5b4fc', bg: 'rgba(99,102,241,0.2)' },
-                    { side: 'left', text: '官网建设大概要多久？', color: '#fff', bg: 'rgba(255,255,255,0.08)' },
-                  ].map((msg, i) => (
-                    <motion.div key={i}
-                      initial={{ opacity: 0, x: msg.side === 'left' ? -20 : 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.3 + i * 0.2 }}
-                      style={{
-                        display: 'flex',
-                        justifyContent: msg.side === 'right' ? 'flex-end' : 'flex-start',
-                        marginBottom: '10px',
-                      }}>
-                      <div style={{
-                        padding: '10px 14px', borderRadius: msg.side === 'left' ? '14px 14px 14px 4px' : '14px 14px 4px 14px',
-                        background: msg.bg,
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        maxWidth: '80%',
-                      }}>
-                        <p style={{ margin: 0, fontSize: '12px', color: msg.color, fontFamily: 'Inter', lineHeight: 1.5 }}>{msg.text}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                  {/* Typing indicator */}
-                  <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <div style={{
-                      padding: '10px 16px', borderRadius: '14px 14px 4px 14px',
-                      background: 'rgba(99,102,241,0.2)', border: '1px solid rgba(99,102,241,0.3)',
-                      display: 'flex', gap: '4px', alignItems: 'center',
-                    }}>
-                      {[0, 0.2, 0.4].map((d, i) => (
-                        <motion.div key={i}
-                          animate={{ y: [0, -4, 0] }}
-                          transition={{ duration: 0.7, repeat: Infinity, delay: d }}
-                          style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#818cf8' }} />
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                {/* Scene image */}
+                <img
+                  src="/images/Products_ChatFlowPro.png"
+                  alt="ChatFlow Pro"
+                  style={{
+                    position: 'absolute', inset: 0,
+                    width: '100%', height: '100%', objectFit: 'cover',
+                  }}
+                />
               </div>
 
               {/* Content */}
