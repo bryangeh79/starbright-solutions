@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
 import { appWithTranslation } from 'next-i18next/pages';
+import nextI18NextConfig from '../next-i18next.config';
 import '../styles/globals.css';
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
@@ -70,4 +71,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(MyApp, nextI18NextConfig);
