@@ -1,53 +1,7 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-
-const highlights = [
-  {
-    icon: '💳',
-    title: '200+ 全球支付方式',
-    desc: '集成信用卡、借记卡、电子钱包、网银转账、加密货币与各地区本地支付渠道，满足全球不同市场的玩家支付偏好。',
-  },
-  {
-    icon: '🔒',
-    title: '安全交易处理',
-    desc: '采用银行级别加密技术与多层安全机制，保障每一笔交易的安全性与数据完整性，让玩家与运营商都安心无忧。',
-  },
-  {
-    icon: '🌍',
-    title: '多币种结算支持',
-    desc: '支持主流法币与加密货币的实时汇率换算与多币种结算，帮助运营商轻松拓展国际市场，无缝处理跨境资金流转。',
-  },
-  {
-    icon: '🛡️',
-    title: '智能欺诈检测',
-    desc: '基于机器学习的欺诈识别模型，实时分析交易风险，自动拦截可疑交易，将欺诈损失降至最低。',
-  },
-  {
-    icon: '📊',
-    title: '完整财务报表',
-    desc: '详尽的交易明细、对账报告与财务统计，帮助运营商全面掌握资金流动状况，简化财务管理与审计流程。',
-  },
-  {
-    icon: '⚡',
-    title: '快速到账结算',
-    desc: '优化结算流程，支持快速到账与灵活结算周期配置，改善资金流动效率，提升运营商的流动性管理能力。',
-  },
-];
-
-const features = [
-  { icon: '💳', title: '多渠道支付接入', desc: '信用卡、电子钱包、加密货币、本地支付等 200+ 支付方式统一管理。', color: '#ec4899' },
-  { icon: '🔒', title: '安全加密传输', desc: 'PCI DSS 标准合规，端对端加密，保障每一笔交易的安全性。', color: '#06b6d4' },
-  { icon: '🌍', title: '多币种支持', desc: '实时汇率换算，支持主流法币与加密货币，轻松应对国际市场。', color: '#22c55e' },
-  { icon: '🤖', title: '智能欺诈防控', desc: 'AI 驱动的实时欺诈检测，自动识别并拦截异常交易行为。', color: '#a78bfa' },
-  { icon: '📈', title: '财务数据报表', desc: '全面的交易统计与对账报告，支持数据导出与财务审计。', color: '#f97316' },
-];
-
-const audiences = [
-  '在线娱乐城与体育博彩平台',
-  '需要处理多国支付的跨境电商',
-  '寻求安全合规支付解决方案的企业',
-  '希望降低欺诈风险的金融类平台',
-];
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -57,19 +11,53 @@ const fadeUp = {
   }),
 };
 
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
+
 export default function PaymentGatewayPage() {
+  const { t } = useTranslation('common');
+
+  const highlights = [
+    { icon: '💳', title: t('pay_page.h1_title'), desc: t('pay_page.h1_desc') },
+    { icon: '🔒', title: t('pay_page.h2_title'), desc: t('pay_page.h2_desc') },
+    { icon: '🌍', title: t('pay_page.h3_title'), desc: t('pay_page.h3_desc') },
+    { icon: '🛡️', title: t('pay_page.h4_title'), desc: t('pay_page.h4_desc') },
+    { icon: '📊', title: t('pay_page.h5_title'), desc: t('pay_page.h5_desc') },
+    { icon: '⚡', title: t('pay_page.h6_title'), desc: t('pay_page.h6_desc') },
+  ];
+
+  const features = [
+    { icon: '💳', title: t('pay_page.f1_title'), desc: t('pay_page.f1_desc'), color: '#ec4899' },
+    { icon: '🔒', title: t('pay_page.f2_title'), desc: t('pay_page.f2_desc'), color: '#06b6d4' },
+    { icon: '🌍', title: t('pay_page.f3_title'), desc: t('pay_page.f3_desc'), color: '#22c55e' },
+    { icon: '🤖', title: t('pay_page.f4_title'), desc: t('pay_page.f4_desc'), color: '#a78bfa' },
+    { icon: '📈', title: t('pay_page.f5_title'), desc: t('pay_page.f5_desc'), color: '#f97316' },
+  ];
+
+  const audiences = [
+    t('pay_page.a1'),
+    t('pay_page.a2'),
+    t('pay_page.a3'),
+    t('pay_page.a4'),
+  ];
+
   return (
     <>
       <Head>
-        <title>Payment Gateway | STARBRIGHT SOLUTIONS</title>
-        <meta name="description" content="Payment Gateway — 支付网关集成方案，集成 200+ 全球支付方式，支持多币种、加密货币与欺诈检测，提供完整财务报表。" />
-        <meta property="og:title" content="Payment Gateway | STARBRIGHT SOLUTIONS" />
-        <meta property="og:description" content="集成 200+ 全球支付方式，安全交易处理、多币种支持、智能欺诈检测与完整财务报表。" />
+        <title>{t('pay_page.meta_title')}</title>
+        <meta name="description" content={t('pay_page.meta_desc')} />
+        <meta property="og:title" content={t('pay_page.meta_title')} />
+        <meta property="og:description" content={t('pay_page.og_desc')} />
         <meta property="og:image" content="/images/Products_Payment.png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Payment Gateway | STARBRIGHT SOLUTIONS" />
-        <meta name="twitter:description" content="支付网关集成方案 — 200+ 支付方式，多币种，智能欺诈检测。" />
+        <meta name="twitter:title" content={t('pay_page.meta_title')} />
+        <meta name="twitter:description" content={t('pay_page.tw_desc')} />
         <meta name="twitter:image" content="/images/Products_Payment.png" />
       </Head>
 
@@ -111,7 +99,7 @@ export default function PaymentGatewayPage() {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M19 12H5M12 19l-7-7 7-7" />
                 </svg>
-                产品列表
+                {t('pay_page.breadcrumb')}
               </a>
             </motion.div>
 
@@ -126,18 +114,18 @@ export default function PaymentGatewayPage() {
               }}>
                 <motion.span animate={{ opacity: [1, 0.3, 1] }} transition={{ duration: 1.6, repeat: Infinity }}
                   style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#f472b6' }} />
-                💳 开发中
+                {t('pay_page.badge_dev')}
               </span>
               <span style={{
                 padding: '5px 14px', borderRadius: '999px',
                 background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)',
                 color: '#a5b4fc', fontSize: '12px', fontWeight: 500, fontFamily: 'Inter',
-              }}>200+ 支付方式</span>
+              }}>{t('pay_page.badge_methods')}</span>
               <span style={{
                 padding: '5px 14px', borderRadius: '999px',
                 background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
                 color: 'rgba(255,255,255,0.5)', fontSize: '12px', fontFamily: 'Inter',
-              }}>加密货币支持</span>
+              }}>{t('pay_page.badge_crypto')}</span>
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
@@ -159,7 +147,7 @@ export default function PaymentGatewayPage() {
                 color: '#ec4899', fontWeight: 500,
                 margin: '0 0 20px 0', letterSpacing: '-0.01em',
               }}>
-              支付网关集成方案
+              {t('pay_page.tagline')}
             </motion.p>
 
             <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
@@ -169,7 +157,7 @@ export default function PaymentGatewayPage() {
                 lineHeight: 1.8, color: 'rgba(255,255,255,0.52)',
                 maxWidth: '480px', margin: '0 0 32px 0',
               }}>
-              集成 200+ 全球支付方式，包括信用卡、电子钱包、加密货币与本地支付渠道。提供安全的交易处理、多币种支持、欺诈检测与完整的财务报表，助力运营商在全球市场顺畅收款。
+              {t('pay_page.hero_desc')}
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
@@ -186,7 +174,7 @@ export default function PaymentGatewayPage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 0 36px rgba(236,72,153,0.5)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 0 24px rgba(236,72,153,0.35)'; }}>
-                立即咨询
+                {t('pay_page.cta_primary')}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </a>
               <a href="/products" style={{
@@ -198,7 +186,7 @@ export default function PaymentGatewayPage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.color = '#fff'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = 'rgba(255,255,255,0.65)'; }}>
-                查看所有产品
+                {t('pay_page.cta_secondary')}
               </a>
             </motion.div>
           </div>
@@ -249,9 +237,9 @@ export default function PaymentGatewayPage() {
             <h2 style={{
               fontFamily: 'Inter, sans-serif', fontSize: 'clamp(28px, 3vw, 42px)',
               fontWeight: 800, letterSpacing: '-0.03em', color: '#fff', margin: '0 0 16px 0',
-            }}>核心优势</h2>
+            }}>{t('pay_page.highlights_title')}</h2>
             <p style={{ fontFamily: 'Inter', fontSize: '16px', color: 'rgba(255,255,255,0.45)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
-              安全、高效、全球化的支付解决方案，让收款不再是业务扩张的瓶颈
+              {t('pay_page.highlights_subtitle')}
             </p>
           </motion.div>
 
@@ -285,9 +273,9 @@ export default function PaymentGatewayPage() {
             <h2 style={{
               fontFamily: 'Inter, sans-serif', fontSize: 'clamp(26px, 2.8vw, 38px)',
               fontWeight: 800, letterSpacing: '-0.03em', color: '#fff', margin: '0 0 14px 0',
-            }}>产品功能</h2>
+            }}>{t('pay_page.features_title')}</h2>
             <p style={{ fontFamily: 'Inter', fontSize: '15px', color: 'rgba(255,255,255,0.4)', maxWidth: '480px', lineHeight: 1.7 }}>
-              覆盖支付全流程，从接入到安全再到财务管理，一体化解决方案
+              {t('pay_page.features_subtitle')}
             </p>
           </motion.div>
 
@@ -323,9 +311,9 @@ export default function PaymentGatewayPage() {
               <h2 style={{
                 fontFamily: 'Inter', fontSize: 'clamp(24px, 2.5vw, 36px)',
                 fontWeight: 800, letterSpacing: '-0.03em', color: '#fff', margin: '0 0 16px 0',
-              }}>适合哪些团队？</h2>
+              }}>{t('pay_page.audience_title')}</h2>
               <p style={{ fontFamily: 'Inter', fontSize: '15px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.75, margin: '0 0 28px 0' }}>
-                无论您的业务覆盖哪些地区与市场，我们的支付网关解决方案都能为您提供灵活、安全的收款能力。
+                {t('pay_page.audience_subtitle')}
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {audiences.map((a) => (
@@ -354,10 +342,10 @@ export default function PaymentGatewayPage() {
               }}>
               <div style={{ fontSize: '36px', marginBottom: '16px' }}>💳</div>
               <h3 style={{ fontFamily: 'Inter', fontSize: '18px', fontWeight: 700, color: '#fff', margin: '0 0 12px 0' }}>
-                准备好优化您的支付体验了吗？
+                {t('pay_page.cta_box_title')}
               </h3>
               <p style={{ fontFamily: 'Inter', fontSize: '14px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.75, margin: '0 0 24px 0' }}>
-                告诉我们您的目标市场与支付需求，我们将为您定制最适合的支付网关集成方案。
+                {t('pay_page.cta_box_desc')}
               </p>
               <a href="/contact" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
@@ -366,7 +354,7 @@ export default function PaymentGatewayPage() {
                 fontSize: '14px', fontWeight: 700,
                 textDecoration: 'none', fontFamily: 'Inter',
               }}>
-                立即咨询
+                {t('pay_page.cta_box_btn')}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </a>
             </motion.div>

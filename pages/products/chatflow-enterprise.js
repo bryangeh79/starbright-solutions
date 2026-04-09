@@ -1,21 +1,12 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 const accentColor = '#d4a528';
 const accentGlow = 'rgba(212,165,40,0.4)';
 const accentBg = 'rgba(212,165,40,0.1)';
 const accentBorder = 'rgba(212,165,40,0.35)';
-
-const highlights = [
-  { icon: '🏢', title: '包含全部 Pro 功能', desc: '在 Pro 完整功能基础上，进一步扩展电商接入、销售辅助、工作流自动化与深度分析能力。' },
-  { icon: '🛒', title: '电商平台接入', desc: '支持 Shopee、Lazada、TikTok Shop 及其他定制平台，整合客户数据与订单状态，统一管理电商客服。' },
-  { icon: '📈', title: '销售辅助与转化流程', desc: '线索评分、意向识别、自动标签、报价发送、预约与演示预订，将客服系统延伸至销售转化链路。' },
-  { icon: '⚙️', title: '工作流自动化', desc: '与 CRM、Google Sheets、邮件系统、工单平台对接，将前端对话数据自动同步至内部业务系统。' },
-  { icon: '🔐', title: '企业级权限与管控', desc: 'Admin / Manager / Agent 三级角色体系，支持审计日志、会话分配、VIP 优先处理与投诉升级流程。' },
-  { icon: '📊', title: '深度分析与自定义报表', desc: '渠道效果、线索来源、AI 解决率、人工干预率、转化漏斗与销售归因分析，支持自定义报表导出。' },
-  { icon: '🧠', title: '高级 AI 对话能力', desc: '多轮引导式对话、客户历史记录利用、意图识别、情感分析与优先级判断，支持品牌语气规则配置。' },
-  { icon: '📋', title: '企业知识库管理', desc: '部门级知识库分隔，支持 SOP / 手册 / 网页 / 文件导入，动态更新、回答范围管控与敏感内容限制。' },
-];
 
 const channels = [
   { name: 'Website Chat', color: '#6366f1' },
@@ -27,73 +18,70 @@ const channels = [
   { name: 'TikTok Shop', color: '#ec4899' },
 ];
 
-const features = [
-  {
-    title: '全渠道统一视图',
-    color: '#6366f1',
-    items: ['多渠道会话统一管理', '跨渠道客户身份识别', '统一客户档案', '渠道来源追踪', '全局会话搜索'],
-  },
-  {
-    title: '电商平台集成',
-    color: '#f97316',
-    items: ['Shopee 接入层', 'Lazada 接入层', 'TikTok Shop 接入层', '其他平台定制接入', '客户数据同步', '订单/状态关联'],
-  },
-  {
-    title: '高级 AI 对话',
-    color: '#a78bfa',
-    items: ['强化语境理解', '多轮引导式对话', '客户历史利用', '意图与情感识别', '优先级判断', '品牌语气规则'],
-  },
-  {
-    title: '销售与转化辅助',
-    color: '#d4a528',
-    items: ['线索评分与意向识别', '自动标签与产品推荐', '信息包自动发送', '报价与预约流程', '未转化线索跟进', '支付流程引导'],
-  },
-  {
-    title: '工作流自动化',
-    color: '#34d399',
-    items: ['CRM 数据同步', 'Google Sheets 同步', '自动发送邮件', '报价单触发', '工单创建', '预约与售后提醒'],
-  },
-  {
-    title: '企业协作与权控',
-    color: '#f87171',
-    items: ['Admin/Manager/Agent 角色', '会话分配与转接', 'VIP 优先处理', '投诉升级流程', '审计日志', '访问权限管理'],
-  },
-  {
-    title: '高级知识库',
-    color: '#06b6d4',
-    items: ['部门级知识库分隔', 'SOP/文件/网页导入', '动态内容更新', '回答范围管控', '敏感内容限制', '准确性与一致性治理'],
-  },
-  {
-    title: '深度分析报表',
-    color: '#fbbf24',
-    items: ['渠道效果分析', '线索来源追踪', 'AI 解决率', '人工干预率', '转化漏斗报告', '自定义报表导出'],
-  },
-];
-
-const useCases = [
-  '跨平台电商客服与销售辅助',
-  '成长型企业统一 AI 互动层（官网 + 社交渠道 + 内部跟进）',
-  '需要线索评分、报价流程与预约自动化的企业销售台',
-  '多团队支持环境：升级处理、VIP 管理与分析报表',
-  '客户互动数据需同步至 CRM、工单或内部系统的业务自动化项目',
-];
-
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
   visible: (d = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.55, delay: d, ease: [0.22, 1, 0.36, 1] } }),
 };
 
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
+
 export default function ChatFlowEnterprisePage() {
+  const { t } = useTranslation('common');
+
+  const highlights = [
+    { icon: '🏢', title: t('cfe_page.h1_title'), desc: t('cfe_page.h1_desc') },
+    { icon: '🛒', title: t('cfe_page.h2_title'), desc: t('cfe_page.h2_desc') },
+    { icon: '📈', title: t('cfe_page.h3_title'), desc: t('cfe_page.h3_desc') },
+    { icon: '⚙️', title: t('cfe_page.h4_title'), desc: t('cfe_page.h4_desc') },
+    { icon: '🔐', title: t('cfe_page.h5_title'), desc: t('cfe_page.h5_desc') },
+    { icon: '📊', title: t('cfe_page.h6_title'), desc: t('cfe_page.h6_desc') },
+    { icon: '🧠', title: t('cfe_page.h7_title'), desc: t('cfe_page.h7_desc') },
+    { icon: '📋', title: t('cfe_page.h8_title'), desc: t('cfe_page.h8_desc') },
+  ];
+
+  const features = [
+    { title: t('cfe_page.feat1_title'), color: '#6366f1', items: t('cfe_page.feat1_items').split('|') },
+    { title: t('cfe_page.feat2_title'), color: '#f97316', items: t('cfe_page.feat2_items').split('|') },
+    { title: t('cfe_page.feat3_title'), color: '#a78bfa', items: t('cfe_page.feat3_items').split('|') },
+    { title: t('cfe_page.feat4_title'), color: '#d4a528', items: t('cfe_page.feat4_items').split('|') },
+    { title: t('cfe_page.feat5_title'), color: '#34d399', items: t('cfe_page.feat5_items').split('|') },
+    { title: t('cfe_page.feat6_title'), color: '#f87171', items: t('cfe_page.feat6_items').split('|') },
+    { title: t('cfe_page.feat7_title'), color: '#06b6d4', items: t('cfe_page.feat7_items').split('|') },
+    { title: t('cfe_page.feat8_title'), color: '#fbbf24', items: t('cfe_page.feat8_items').split('|') },
+  ];
+
+  const useCases = [
+    t('cfe_page.uc1'),
+    t('cfe_page.uc2'),
+    t('cfe_page.uc3'),
+    t('cfe_page.uc4'),
+    t('cfe_page.uc5'),
+  ];
+
+  const idealItems = [
+    t('cfe_page.ideal_i1'),
+    t('cfe_page.ideal_i2'),
+    t('cfe_page.ideal_i3'),
+    t('cfe_page.ideal_i4'),
+    t('cfe_page.ideal_i5'),
+  ];
+
   return (
     <>
       <Head>
-        <title>ChatFlow Enterprise | STARBRIGHT SOLUTIONS</title>
-        <meta name="description" content="ChatFlow Enterprise — AI 客户互动与业务自动化系统，面向成长型企业，涵盖全渠道接入、电商集成、销售转化流程、工作流自动化与深度分析报表。" />
-        <meta property="og:title" content="ChatFlow Enterprise | STARBRIGHT SOLUTIONS" />
-        <meta property="og:description" content="AI 客户互动与业务自动化系统 — 超越客服回复，深入路由、销售辅助、系统集成与业务增长。" />
+        <title>{t('cfe_page.meta_title')}</title>
+        <meta name="description" content={t('cfe_page.meta_desc')} />
+        <meta property="og:title" content={t('cfe_page.meta_title')} />
+        <meta property="og:description" content={t('cfe_page.og_desc')} />
         <meta property="og:image" content="/images/Products_ChatFlowEnterprise.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="ChatFlow Enterprise | STARBRIGHT SOLUTIONS" />
+        <meta name="twitter:title" content={t('cfe_page.meta_title')} />
         <meta name="twitter:image" content="/images/Products_ChatFlowEnterprise.png" />
       </Head>
 
@@ -131,7 +119,7 @@ export default function ChatFlowEnterprisePage() {
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M19 12H5M12 5l-7 7 7 7" />
               </svg>
-              所有产品
+              {t('cfe_page.breadcrumb_all')}
             </a>
             <span style={{ color: 'rgba(255,255,255,0.15)', fontSize: '13px' }}>/</span>
             <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.45)' }}>ChatFlow Enterprise</span>
@@ -154,7 +142,7 @@ export default function ChatFlowEnterprisePage() {
                     width: '6px', height: '6px', borderRadius: '50%', background: accentColor,
                     boxShadow: '0 0 8px rgba(212,165,40,0.8)',
                   }} />
-                  ⚡ 开发中
+                  {t('cfe_page.badge_dev')}
                 </span>
                 {channels.slice(0, 4).map((ch) => (
                   <span key={ch.name} style={{
@@ -171,7 +159,7 @@ export default function ChatFlowEnterprisePage() {
                   background: 'rgba(212,165,40,0.08)',
                   color: accentColor, fontSize: '11px',
                   fontFamily: 'Inter', fontWeight: 600,
-                }}>+ 电商平台</span>
+                }}>{t('cfe_page.badge_ecom')}</span>
               </motion.div>
 
               <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
@@ -197,7 +185,7 @@ export default function ChatFlowEnterprisePage() {
                   color: accentColor, fontWeight: 600, letterSpacing: '0.06em',
                   textTransform: 'uppercase', margin: '0 0 20px 0',
                 }}>
-                AI 客户互动与业务自动化系统
+                {t('cfe_page.tagline')}
               </motion.p>
 
               <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
@@ -207,7 +195,7 @@ export default function ChatFlowEnterprisePage() {
                   color: 'rgba(255,255,255,0.55)', lineHeight: 1.8,
                   maxWidth: '540px', margin: '0 0 32px 0',
                 }}>
-                面向成长型企业与大型团队。统一多渠道客户互动、接入电商平台、支持销售转化流程，并将对话数据连接至内部业务系统，构建可衡量的业务增长支撑。
+                {t('cfe_page.hero_desc')}
               </motion.p>
 
               {/* Core promise */}
@@ -226,7 +214,7 @@ export default function ChatFlowEnterprisePage() {
                   fontFamily: 'Inter, sans-serif', fontSize: '13px',
                   color: 'rgba(255,255,255,0.65)', lineHeight: 1.5,
                 }}>
-                  超越客服回复 — 路由、销售辅助、系统集成、业务增长
+                  {t('cfe_page.core_promise')}
                 </span>
               </motion.div>
 
@@ -245,7 +233,7 @@ export default function ChatFlowEnterprisePage() {
                 }}
                   onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 40px rgba(212,165,40,0.6)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 0 28px ' + accentGlow; }}>
-                  预约咨询
+                  {t('cfe_page.cta_primary')}
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
@@ -260,7 +248,7 @@ export default function ChatFlowEnterprisePage() {
                 }}
                   onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(167,139,250,0.5)'; e.currentTarget.style.color = '#a78bfa'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = 'rgba(255,255,255,0.6)'; }}>
-                  对比 Pro 版本
+                  {t('cfe_page.cta_secondary')}
                 </a>
               </motion.div>
             </div>
@@ -286,9 +274,9 @@ export default function ChatFlowEnterprisePage() {
               {/* Stats */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', width: '100%' }}>
                 {[
-                  { value: '7+', label: '渠道接入' },
-                  { value: '全功能', label: '含 Pro 全部' },
-                  { value: '企业级', label: '权限与管控' },
+                  { value: '7+', label: t('cfe_page.stat1_label') },
+                  { value: '全功能', label: t('cfe_page.stat2_label') },
+                  { value: '企业级', label: t('cfe_page.stat3_label') },
                 ].map((s) => (
                   <div key={s.label} style={{
                     padding: '14px 10px', borderRadius: '12px', textAlign: 'center',
@@ -321,11 +309,11 @@ export default function ChatFlowEnterprisePage() {
             <h2 style={{
               fontFamily: 'Inter, sans-serif', fontSize: 'clamp(26px, 3vw, 40px)',
               fontWeight: 700, color: '#fff', letterSpacing: '-0.03em', margin: '0 0 12px 0',
-            }}>企业级核心能力</h2>
+            }}>{t('cfe_page.highlights_title')}</h2>
             <p style={{
               fontFamily: 'Inter, sans-serif', fontSize: '15px',
               color: 'rgba(255,255,255,0.45)', maxWidth: '480px', lineHeight: 1.75, margin: 0,
-            }}>不只是更多功能，而是将 AI 对话能力延伸至销售转化、业务流程与战略决策层面。</p>
+            }}>{t('cfe_page.highlights_subtitle')}</p>
           </motion.div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -377,7 +365,7 @@ export default function ChatFlowEnterprisePage() {
             <h2 style={{
               fontFamily: 'Inter, sans-serif', fontSize: 'clamp(26px, 3vw, 40px)',
               fontWeight: 700, color: '#fff', letterSpacing: '-0.03em', margin: 0,
-            }}>全功能模块详情</h2>
+            }}>{t('cfe_page.features_title')}</h2>
           </motion.div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -435,11 +423,11 @@ export default function ChatFlowEnterprisePage() {
                 display: 'block', fontSize: '11px', fontWeight: 600, color: accentColor,
                 letterSpacing: '0.12em', textTransform: 'uppercase',
                 fontFamily: 'Inter, sans-serif', marginBottom: '12px',
-              }}>TYPICAL USE CASES</span>
+              }}>{t('cfe_page.usecases_badge')}</span>
               <h2 style={{
                 fontFamily: 'Inter, sans-serif', fontSize: 'clamp(22px, 2.5vw, 34px)',
                 fontWeight: 700, color: '#fff', letterSpacing: '-0.03em', margin: '0 0 28px 0',
-              }}>典型应用场景</h2>
+              }}>{t('cfe_page.usecases_title')}</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {useCases.map((uc, i) => (
                   <div key={i} style={{
@@ -468,11 +456,11 @@ export default function ChatFlowEnterprisePage() {
                 display: 'block', fontSize: '11px', fontWeight: 600, color: accentColor,
                 letterSpacing: '0.12em', textTransform: 'uppercase',
                 fontFamily: 'Inter, sans-serif', marginBottom: '12px',
-              }}>IDEAL FOR</span>
+              }}>{t('cfe_page.ideal_badge')}</span>
               <h2 style={{
                 fontFamily: 'Inter, sans-serif', fontSize: 'clamp(22px, 2.5vw, 34px)',
                 fontWeight: 700, color: '#fff', letterSpacing: '-0.03em', margin: '0 0 28px 0',
-              }}>适合哪些客户</h2>
+              }}>{t('cfe_page.ideal_title')}</h2>
               <div style={{
                 padding: '28px', borderRadius: '16px',
                 background: accentBg, border: '1px solid ' + accentBorder,
@@ -482,10 +470,10 @@ export default function ChatFlowEnterprisePage() {
                   fontFamily: 'Inter, sans-serif', fontSize: '14px',
                   color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, margin: '0 0 16px 0',
                 }}>
-                  ChatFlow Enterprise 最适合需要多团队协同、平台集成与可量化转化支撑的企业——将 AI 系统定位为业务战略工具，而非仅仅是客服自动化。
+                  {t('cfe_page.ideal_desc')}
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {['成长期企业与大型团队', '电商运营商（Shopee/Lazada/TikTok Shop）', '多部门业务需要统一管控的组织', '需要将 AI 互动数据接入 CRM 或内部系统的企业', '对转化率与 ROI 有明确追踪需求的管理团队'].map((item) => (
+                  {idealItems.map((item) => (
                     <div key={item} style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
                         stroke={accentColor} strokeWidth="2.5" style={{ flexShrink: 0 }}>
@@ -520,12 +508,12 @@ export default function ChatFlowEnterprisePage() {
               fontFamily: 'Inter, sans-serif', fontSize: 'clamp(28px, 3.5vw, 46px)',
               fontWeight: 700, color: '#fff', letterSpacing: '-0.03em',
               lineHeight: 1.15, margin: '0 0 16px 0',
-            }}>为成长型业务构建更完整的 AI 底座</h2>
+            }}>{t('cfe_page.cta_title')}</h2>
             <p style={{
               fontFamily: 'Inter, sans-serif', fontSize: '15px',
               color: 'rgba(255,255,255,0.45)', lineHeight: 1.8, margin: '0 0 36px 0',
             }}>
-              了解 ChatFlow Enterprise 如何帮助您的企业统一渠道、提升转化效率，并将客户互动数据接入整体业务体系。
+              {t('cfe_page.cta_desc')}
             </p>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="/contact" style={{
@@ -539,7 +527,7 @@ export default function ChatFlowEnterprisePage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 40px rgba(212,165,40,0.6)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 0 28px ' + accentGlow; }}>
-                预约企业咨询
+                {t('cfe_page.cta_book')}
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -554,7 +542,7 @@ export default function ChatFlowEnterprisePage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(167,139,250,0.5)'; e.currentTarget.style.color = '#a78bfa'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = 'rgba(255,255,255,0.6)'; }}>
-                查看 Pro 版本
+                {t('cfe_page.cta_pro')}
               </a>
             </div>
           </motion.div>

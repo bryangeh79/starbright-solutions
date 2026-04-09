@@ -1,98 +1,36 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 // ─── Data ────────────────────────────────────────────────────
 const INITIAL_ACTIVE = new Set([2, 7, 10, 18, 21, 27, 35, 43, 52, 58, 63, 30]);
 
-const services = [
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-      </svg>
-    ),
-    title: '企业官网与网站系统',
-    desc: '建设稳定、专业、可扩展的官网与网站系统，兼顾品牌展示、业务承接与后续运营。',
-    tag: 'Web Dev',
-    color: '#6366f1',
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12c0-2.76 1.12-5.26 2.93-7.07" />
-        <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" />
-      </svg>
-    ),
-    title: 'AI 客服机器人',
-    desc: '覆盖常见咨询、产品介绍与基础售前响应，提升服务效率与客户体验。',
-    tag: 'AI',
-    color: '#8b5cf6',
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
-    title: '自动回复系统',
-    desc: '围绕表单、预约、通知与固定场景应答，减少漏回漏接与重复处理。',
-    tag: 'Automation',
-    color: '#06b6d4',
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="3" y="3" width="6" height="6" rx="1" />
-        <rect x="15" y="3" width="6" height="6" rx="1" />
-        <rect x="9" y="15" width="6" height="6" rx="1" />
-        <path d="M6 9v3a3 3 0 0 0 3 3M18 9v3a3 3 0 0 1-3 3" />
-      </svg>
-    ),
-    title: '业务自动化解决方案',
-    desc: '打通线索流转、任务分派、审批协作等环节，让业务流程更稳定、更可控。',
-    tag: 'Workflow',
-    color: '#10b981',
-  },
+const SERVICE_ICONS = [
+  <svg key="web" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>,
+  <svg key="ai" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12c0-2.76 1.12-5.26 2.93-7.07" />
+    <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" />
+  </svg>,
+  <svg key="auto" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+  </svg>,
+  <svg key="workflow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <rect x="3" y="3" width="6" height="6" rx="1" />
+    <rect x="15" y="3" width="6" height="6" rx="1" />
+    <rect x="9" y="15" width="6" height="6" rx="1" />
+    <path d="M6 9v3a3 3 0 0 0 3 3M18 9v3a3 3 0 0 1-3 3" />
+  </svg>,
 ];
+const SERVICE_COLORS = ['#6366f1', '#8b5cf6', '#06b6d4', '#10b981'];
+const SERVICE_KEYS = ['web', 'ai', 'auto', 'workflow'];
 
-const stats = [
-  { value: '50+', label: '成功项目交付' },
-  { value: '6', label: '覆盖核心行业' },
-  { value: '98%', label: '客户满意度' },
-  { value: '24h', label: '快速响应承诺' },
-];
-
-const steps = [
-  {
-    num: '01',
-    title: '需求沟通',
-    desc: '确认业务目标、现有资产与项目边界，明确交付标准，避免方向偏差。',
-    icon: '💬',
-  },
-  {
-    num: '02',
-    title: '方案设计',
-    desc: '内容结构、视觉系统与功能规划一体推进，给出可执行的落地方案。',
-    icon: '🎨',
-  },
-  {
-    num: '03',
-    title: '开发交付',
-    desc: '持续迭代推进，稳定上线，支持后续扩展与长期运营维护。',
-    icon: '🚀',
-  },
-];
-
-const industries = [
-  { label: '零售与门店', icon: '🏪' },
-  { label: '餐饮与服务业', icon: '🍽️' },
-  { label: '教育与培训', icon: '📚' },
-  { label: '金融顾问与专业服务', icon: '💼' },
-  { label: '电商与线上业务', icon: '🛒' },
-  { label: '企业内部运营管理', icon: '⚙️' },
-];
+const INDUSTRY_ICONS = ['🏪', '🍽️', '📚', '💼', '🛒', '⚙️'];
+const INDUSTRY_KEYS = ['i1', 'i2', 'i3', 'i4', 'i5', 'i6'];
 
 const marqueeItems = [
   '企业官网建设', 'AI 客服系统', '业务流程自动化',
@@ -272,7 +210,43 @@ function SectionDesc({ children }) {
 }
 
 // ─── Page ────────────────────────────────────────────────────
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
+
 export default function HomePage() {
+  const { t } = useTranslation('common');
+
+  const services = SERVICE_KEYS.map((key, i) => ({
+    icon: SERVICE_ICONS[i],
+    title: t(`services.${key}.title`),
+    desc: t(`services.${key}.desc`),
+    tag: t(`services.${key}.tag`),
+    color: SERVICE_COLORS[i],
+  }));
+
+  const stats = [
+    { value: '50+', label: t('stats.projects') },
+    { value: '6', label: t('stats.industries') },
+    { value: '98%', label: t('stats.satisfaction') },
+    { value: '24h', label: t('stats.response') },
+  ];
+
+  const steps = [
+    { num: '01', title: t('steps.s1.title'), desc: t('steps.s1.desc'), icon: '💬' },
+    { num: '02', title: t('steps.s2.title'), desc: t('steps.s2.desc'), icon: '🎨' },
+    { num: '03', title: t('steps.s3.title'), desc: t('steps.s3.desc'), icon: '🚀' },
+  ];
+
+  const industries = INDUSTRY_KEYS.map((key, i) => ({
+    label: t(`industries.${key}`),
+    icon: INDUSTRY_ICONS[i],
+  }));
+
   return (
     <>
       <Head>
@@ -354,7 +328,7 @@ export default function HomePage() {
                   transition={{ duration: 1.8, repeat: Infinity }}
                   style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#818cf8', flexShrink: 0 }}
                 />
-                AI-Powered · Enterprise Digital Solutions
+                {t('hero.badge')}
               </span>
             </motion.div>
 
@@ -368,9 +342,9 @@ export default function HomePage() {
                 letterSpacing: '-0.03em', color: '#fff',
                 margin: '0 0 20px 0',
               }}>
-              把企业官网<br />
-              升级成更成熟的<br />
-              <span className="gradient-text-indigo">数字化主舞台</span>
+              {t('hero.title1')}<br />
+              {t('hero.title2')}<br />
+              <span className="gradient-text-indigo">{t('hero.title3')}</span>
             </motion.h1>
 
             <motion.p
@@ -381,7 +355,7 @@ export default function HomePage() {
                 lineHeight: 1.8, color: 'rgba(255,255,255,0.52)',
                 maxWidth: '420px', margin: '0 0 28px 0',
               }}>
-              STARBRIGHT SOLUTIONS 为企业搭建更清晰的官网、AI 客服与自动化入口，帮助品牌表达、客户沟通与运营流程同步升级。
+              {t('hero.desc')}
             </motion.p>
 
             <motion.div
@@ -395,7 +369,7 @@ export default function HomePage() {
                 fontSize: '14px', fontWeight: 600,
                 textDecoration: 'none', fontFamily: 'Inter, sans-serif',
               }}>
-                获取方案建议
+                {t('hero.cta_primary')}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </a>
               <a href="/solutions" style={{
@@ -408,7 +382,7 @@ export default function HomePage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.35)'; e.currentTarget.style.color = '#fff'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.18)'; e.currentTarget.style.color = 'rgba(255,255,255,0.75)'; }}>
-                查看服务结构
+                {t('hero.cta_secondary')}
               </a>
             </motion.div>
           </div>
@@ -494,9 +468,9 @@ export default function HomePage() {
             viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="sb-services-heading"
             style={{ marginBottom: '48px', paddingTop: '96px' }}>
-            <SectionLabel>Core Services</SectionLabel>
-            <SectionHeading>核心服务概览</SectionHeading>
-            <SectionDesc>我们提供的内容很明确：官网、网站系统、AI 客服、自动回复和业务自动化，分别对应不同业务环节。</SectionDesc>
+            <SectionLabel>{t('services.badge')}</SectionLabel>
+            <SectionHeading>{t('services.title')}</SectionHeading>
+            <SectionDesc>{t('services.desc')}</SectionDesc>
           </motion.div>
 
           <motion.div
@@ -562,9 +536,9 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.6 }}
             style={{ marginBottom: '56px' }}>
-            <SectionLabel>Process</SectionLabel>
-            <SectionHeading>合作方式清晰</SectionHeading>
-            <SectionDesc>从需求确认、结构规划到开发交付与上线支持，每一步都围绕可执行与可交付展开。</SectionDesc>
+            <SectionLabel>{t('steps.badge')}</SectionLabel>
+            <SectionHeading>{t('steps.title')}</SectionHeading>
+            <SectionDesc>{t('steps.desc')}</SectionDesc>
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }} className="sb-steps-grid">
@@ -620,9 +594,9 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.6 }}
             style={{ marginBottom: '48px' }}>
-            <SectionLabel>Industries</SectionLabel>
-            <SectionHeading>行业覆盖</SectionHeading>
-            <SectionDesc>如果你在这些行业里，需要更清晰的官网表达与更顺的线上承接，我们会比较适合。</SectionDesc>
+            <SectionLabel>{t('industries.badge')}</SectionLabel>
+            <SectionHeading>{t('industries.title')}</SectionHeading>
+            <SectionDesc>{t('industries.desc')}</SectionDesc>
           </motion.div>
 
           <motion.div
@@ -670,16 +644,16 @@ export default function HomePage() {
               display: 'block', fontSize: '11px', fontWeight: 600, color: '#818cf8',
               letterSpacing: '0.12em', textTransform: 'uppercase',
               fontFamily: 'Inter, sans-serif', marginBottom: '14px',
-            }}>Real Products</span>
+            }}>{t('products_section.badge')}</span>
             <h2 style={{
               fontFamily: 'Inter, sans-serif', fontSize: 'clamp(28px, 3.5vw, 44px)',
               fontWeight: 700, color: '#fff', letterSpacing: '-0.03em',
               lineHeight: 1.15, margin: '0 0 14px 0',
-            }}>我们的智能产品</h2>
+            }}>{t('products_section.title')}</h2>
             <p style={{
               fontFamily: 'Inter, sans-serif', fontSize: '15px',
               color: 'rgba(255,255,255,0.45)', maxWidth: '500px', lineHeight: 1.75, margin: 0,
-            }}>整合前沿 AI 技术与多年业务实战经验，精心打造真正能用、好用的智能化解决方案。</p>
+            }}>{t('products_section.desc')}</p>
           </motion.div>
 
           {/* Products grid */}
@@ -731,7 +705,7 @@ export default function HomePage() {
                     padding: '3px 10px', borderRadius: '999px',
                     background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(16,185,129,0.3)',
                     fontSize: '11px', fontWeight: 600, color: '#34d399', fontFamily: 'Inter',
-                  }}>✦ Live</span>
+                  }}>{t('products_section.m33_live')}</span>
                   <span style={{
                     padding: '3px 10px', borderRadius: '999px',
                     background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.25)',
@@ -747,7 +721,7 @@ export default function HomePage() {
                   fontFamily: 'Inter, sans-serif', fontSize: '14px',
                   color: 'rgba(255,255,255,0.5)', lineHeight: 1.75, margin: '0 0 20px 0',
                 }}>
-                  Telegram 彩票自动化系统，支持自动下注、实时开奖查询、自动结算报告与多语言界面（EN / 中文 / Tiếng Việt）。
+                  {t('products_section.m33_desc')}
                 </p>
 
                 {/* Feature tags */}
@@ -765,11 +739,11 @@ export default function HomePage() {
                   <p style={{
                     fontFamily: 'Inter, sans-serif', fontSize: '12px',
                     color: 'rgba(255,255,255,0.3)', margin: '0 0 4px 0',
-                  }}>下一步</p>
+                  }}>{t('products_section.m33_next')}</p>
                   <p style={{
                     fontFamily: 'Inter, sans-serif', fontSize: '13px',
                     color: 'rgba(255,255,255,0.55)', margin: 0,
-                  }}>🚀 Web & 手机 App 版本开发中</p>
+                  }}>{t('products_section.m33_roadmap')}</p>
                 </div>
               </div>
             </motion.div>
@@ -808,7 +782,7 @@ export default function HomePage() {
                     padding: '3px 10px', borderRadius: '999px',
                     background: 'rgba(245,158,11,0.12)', border: '1px solid rgba(245,158,11,0.3)',
                     fontSize: '11px', fontWeight: 600, color: '#fbbf24', fontFamily: 'Inter',
-                  }}>⚡ 开发中</span>
+                  }}>{t('products_section.chat_dev')}</span>
                   <span style={{
                     padding: '3px 10px', borderRadius: '999px',
                     background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.25)',
@@ -824,7 +798,7 @@ export default function HomePage() {
                   fontFamily: 'Inter, sans-serif', fontSize: '14px',
                   color: 'rgba(255,255,255,0.5)', lineHeight: 1.75, margin: '0 0 20px 0',
                 }}>
-                  企业级 AI 客服系统，自动处理高频咨询、售前引导与常见问题，7×24 小时响应，无缝接入官网与多渠道平台。
+                  {t('products_section.chat_desc')}
                 </p>
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '20px' }}>
@@ -848,7 +822,7 @@ export default function HomePage() {
                   }}
                     onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(99,102,241,0.25)'; e.currentTarget.style.borderColor = 'rgba(99,102,241,0.6)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(99,102,241,0.15)'; e.currentTarget.style.borderColor = 'rgba(99,102,241,0.35)'; }}>
-                    提前预约了解
+                    {t('products_section.chat_cta')}
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                   </a>
                 </div>
@@ -884,13 +858,13 @@ export default function HomePage() {
               fontWeight: 800, color: '#fff',
               letterSpacing: '-0.04em', lineHeight: 1.1,
               margin: '0 0 20px 0',
-            }}>准备好开始了吗？</h2>
+            }}>{t('cta_section.title')}</h2>
             <p style={{
               fontFamily: 'Inter, sans-serif', fontSize: '16px',
               color: 'rgba(255,255,255,0.5)', lineHeight: 1.8,
               margin: '0 0 44px 0',
             }}>
-              如果你已有官网草案、旧站、产品资料或项目目标，我们可以直接从需求梳理开始，快速进入方案阶段。
+              {t('cta_section.desc')}
             </p>
             <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="/contact" className="btn-glow-indigo" style={{
@@ -900,7 +874,7 @@ export default function HomePage() {
                 fontSize: '15px', fontWeight: 600,
                 textDecoration: 'none', fontFamily: 'Inter, sans-serif',
               }}>
-                立即联系我们
+                {t('cta_section.primary')}
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </a>
               <a href="/faq" style={{
@@ -912,7 +886,7 @@ export default function HomePage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.35)'; e.currentTarget.style.color = '#fff'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.18)'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)'; }}>
-                查看常见问题
+                {t('cta_section.secondary')}
               </a>
             </div>
           </motion.div>

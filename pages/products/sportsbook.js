@@ -1,53 +1,7 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-
-const highlights = [
-  {
-    icon: '⚽',
-    title: '覆盖全球主流赛事',
-    desc: '实时接入足球、篮球、网球、棒球等全球主流体育赛事，为玩家提供丰富的投注选项，覆盖联赛级别从顶级联赛到地方赛事。',
-  },
-  {
-    icon: '📊',
-    title: '实时赔率管理',
-    desc: '动态赔率引擎，支持实时赔率更新与灵活调整，帮助运营商精准把控盈利空间，快速响应市场变化。',
-  },
-  {
-    icon: '🏗️',
-    title: '投注构建器',
-    desc: '让玩家自由组合多场赛事与多种投注类型，打造专属复式投注，提升玩家参与度与平均投注金额。',
-  },
-  {
-    icon: '🛡️',
-    title: '智能风险控制',
-    desc: '内置多层风险管理机制，实时监控异常投注行为，自动触发预警与限额保护，有效控制运营风险。',
-  },
-  {
-    icon: '📈',
-    title: '深度数据分析',
-    desc: '全面的赛事数据、玩家行为分析与收益报表，帮助运营商做出更有依据的决策，持续优化业务表现。',
-  },
-  {
-    icon: '⚡',
-    title: '滚球投注支持',
-    desc: '支持赛事进行中的实时滚球投注，提供流畅的即时体验，满足追求实时刺激感的玩家需求。',
-  },
-];
-
-const features = [
-  { icon: '⚽', title: '多项目体育覆盖', desc: '足球、篮球、网球、棒球、板球等全球主流体育项目一网打尽。', color: '#f97316' },
-  { icon: '📡', title: '实时赔率更新', desc: '赔率引擎实时驱动，赛事数据变动即时反映，保持竞争力。', color: '#06b6d4' },
-  { icon: '🔒', title: '风险控制系统', desc: '多维度风险模型，自动识别异常、设置投注限额与保护机制。', color: '#22c55e' },
-  { icon: '🏆', title: '投注构建器', desc: '玩家可自定义组合多场赛事，打造高赔率串关投注体验。', color: '#a78bfa' },
-  { icon: '📊', title: '运营数据报表', desc: '全面的业务数据可视化，帮助管理团队实时掌握经营状态。', color: '#ec4899' },
-];
-
-const audiences = [
-  '体育博彩平台运营商',
-  '需要完善赔率管理系统的团队',
-  '计划推出体育产品线的娱乐城',
-  '寻求专业风险控制解决方案的企业',
-];
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -57,19 +11,53 @@ const fadeUp = {
   }),
 };
 
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
+
 export default function SportsbookPage() {
+  const { t } = useTranslation('common');
+
+  const highlights = [
+    { icon: '⚽', title: t('sports_page.h1_title'), desc: t('sports_page.h1_desc') },
+    { icon: '📊', title: t('sports_page.h2_title'), desc: t('sports_page.h2_desc') },
+    { icon: '🏗️', title: t('sports_page.h3_title'), desc: t('sports_page.h3_desc') },
+    { icon: '🛡️', title: t('sports_page.h4_title'), desc: t('sports_page.h4_desc') },
+    { icon: '📈', title: t('sports_page.h5_title'), desc: t('sports_page.h5_desc') },
+    { icon: '⚡', title: t('sports_page.h6_title'), desc: t('sports_page.h6_desc') },
+  ];
+
+  const features = [
+    { icon: '⚽', title: t('sports_page.f1_title'), desc: t('sports_page.f1_desc'), color: '#f97316' },
+    { icon: '📡', title: t('sports_page.f2_title'), desc: t('sports_page.f2_desc'), color: '#06b6d4' },
+    { icon: '🔒', title: t('sports_page.f3_title'), desc: t('sports_page.f3_desc'), color: '#22c55e' },
+    { icon: '🏆', title: t('sports_page.f4_title'), desc: t('sports_page.f4_desc'), color: '#a78bfa' },
+    { icon: '📊', title: t('sports_page.f5_title'), desc: t('sports_page.f5_desc'), color: '#ec4899' },
+  ];
+
+  const audiences = [
+    t('sports_page.a1'),
+    t('sports_page.a2'),
+    t('sports_page.a3'),
+    t('sports_page.a4'),
+  ];
+
   return (
     <>
       <Head>
-        <title>Sportsbook | STARBRIGHT SOLUTIONS</title>
-        <meta name="description" content="Sportsbook — 体育博彩管理平台，覆盖全球主流赛事，提供赔率实时管理、投注构建器、风险控制与数据分析。" />
-        <meta property="og:title" content="Sportsbook | STARBRIGHT SOLUTIONS" />
-        <meta property="og:description" content="覆盖全球主流赛事的体育博彩管理平台，赔率实时管理、智能风险控制、深度数据分析。" />
+        <title>{t('sports_page.meta_title')}</title>
+        <meta name="description" content={t('sports_page.meta_desc')} />
+        <meta property="og:title" content={t('sports_page.meta_title')} />
+        <meta property="og:description" content={t('sports_page.og_desc')} />
         <meta property="og:image" content="/images/Products_Sports.png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Sportsbook | STARBRIGHT SOLUTIONS" />
-        <meta name="twitter:description" content="体育博彩管理平台 — 全球赛事覆盖，实时赔率，专业风控。" />
+        <meta name="twitter:title" content={t('sports_page.meta_title')} />
+        <meta name="twitter:description" content={t('sports_page.tw_desc')} />
         <meta name="twitter:image" content="/images/Products_Sports.png" />
       </Head>
 
@@ -111,7 +99,7 @@ export default function SportsbookPage() {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M19 12H5M12 19l-7-7 7-7" />
                 </svg>
-                产品列表
+                {t('sports_page.breadcrumb')}
               </a>
             </motion.div>
 
@@ -126,18 +114,18 @@ export default function SportsbookPage() {
               }}>
                 <motion.span animate={{ opacity: [1, 0.3, 1] }} transition={{ duration: 1.6, repeat: Infinity }}
                   style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#fb923c' }} />
-                ⚽ 开发中
+                {t('sports_page.badge_dev')}
               </span>
               <span style={{
                 padding: '5px 14px', borderRadius: '999px',
                 background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)',
                 color: '#a5b4fc', fontSize: '12px', fontWeight: 500, fontFamily: 'Inter',
-              }}>实时赔率</span>
+              }}>{t('sports_page.badge_odds')}</span>
               <span style={{
                 padding: '5px 14px', borderRadius: '999px',
                 background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
                 color: 'rgba(255,255,255,0.5)', fontSize: '12px', fontFamily: 'Inter',
-              }}>风险控制</span>
+              }}>{t('sports_page.badge_risk')}</span>
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
@@ -159,7 +147,7 @@ export default function SportsbookPage() {
                 color: '#f97316', fontWeight: 500,
                 margin: '0 0 20px 0', letterSpacing: '-0.01em',
               }}>
-              体育博彩管理平台
+              {t('sports_page.tagline')}
             </motion.p>
 
             <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
@@ -169,7 +157,7 @@ export default function SportsbookPage() {
                 lineHeight: 1.8, color: 'rgba(255,255,255,0.52)',
                 maxWidth: '480px', margin: '0 0 32px 0',
               }}>
-              覆盖全球主流赛事，提供可扩展的体育博彩解决方案。支持赔率实时管理、投注构建器、风险控制与数据分析，帮助运营商快速建立竞争力强的体育博彩业务。
+              {t('sports_page.hero_desc')}
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
@@ -186,7 +174,7 @@ export default function SportsbookPage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 0 36px rgba(249,115,22,0.5)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 0 24px rgba(249,115,22,0.35)'; }}>
-                立即咨询
+                {t('sports_page.cta_primary')}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </a>
               <a href="/products" style={{
@@ -198,7 +186,7 @@ export default function SportsbookPage() {
               }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.color = '#fff'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = 'rgba(255,255,255,0.65)'; }}>
-                查看所有产品
+                {t('sports_page.cta_secondary')}
               </a>
             </motion.div>
           </div>
@@ -249,9 +237,9 @@ export default function SportsbookPage() {
             <h2 style={{
               fontFamily: 'Inter, sans-serif', fontSize: 'clamp(28px, 3vw, 42px)',
               fontWeight: 800, letterSpacing: '-0.03em', color: '#fff', margin: '0 0 16px 0',
-            }}>核心优势</h2>
+            }}>{t('sports_page.highlights_title')}</h2>
             <p style={{ fontFamily: 'Inter', fontSize: '16px', color: 'rgba(255,255,255,0.45)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
-              专业体育博彩平台，帮助运营商快速进入市场并持续保持竞争优势
+              {t('sports_page.highlights_subtitle')}
             </p>
           </motion.div>
 
@@ -285,9 +273,9 @@ export default function SportsbookPage() {
             <h2 style={{
               fontFamily: 'Inter, sans-serif', fontSize: 'clamp(26px, 2.8vw, 38px)',
               fontWeight: 800, letterSpacing: '-0.03em', color: '#fff', margin: '0 0 14px 0',
-            }}>产品功能</h2>
+            }}>{t('sports_page.features_title')}</h2>
             <p style={{ fontFamily: 'Inter', fontSize: '15px', color: 'rgba(255,255,255,0.4)', maxWidth: '480px', lineHeight: 1.7 }}>
-              从赛事数据到风险管理，全方位保障体育博彩业务的稳健运营
+              {t('sports_page.features_subtitle')}
             </p>
           </motion.div>
 
@@ -323,9 +311,9 @@ export default function SportsbookPage() {
               <h2 style={{
                 fontFamily: 'Inter', fontSize: 'clamp(24px, 2.5vw, 36px)',
                 fontWeight: 800, letterSpacing: '-0.03em', color: '#fff', margin: '0 0 16px 0',
-              }}>适合哪些团队？</h2>
+              }}>{t('sports_page.audience_title')}</h2>
               <p style={{ fontFamily: 'Inter', fontSize: '15px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.75, margin: '0 0 28px 0' }}>
-                无论是初创体育博彩平台，还是希望提升现有系统能力的成熟运营商，我们都能提供匹配的解决方案。
+                {t('sports_page.audience_subtitle')}
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {audiences.map((a) => (
@@ -354,10 +342,10 @@ export default function SportsbookPage() {
               }}>
               <div style={{ fontSize: '36px', marginBottom: '16px' }}>⚽</div>
               <h3 style={{ fontFamily: 'Inter', fontSize: '18px', fontWeight: 700, color: '#fff', margin: '0 0 12px 0' }}>
-                准备好建立您的体育博彩平台了吗？
+                {t('sports_page.cta_box_title')}
               </h3>
               <p style={{ fontFamily: 'Inter', fontSize: '14px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.75, margin: '0 0 24px 0' }}>
-                联系我们了解赛事覆盖范围、赔率系统架构与定制化风险管理方案，助力您的业务快速起步。
+                {t('sports_page.cta_box_desc')}
               </p>
               <a href="/contact" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
@@ -366,7 +354,7 @@ export default function SportsbookPage() {
                 fontSize: '14px', fontWeight: 700,
                 textDecoration: 'none', fontFamily: 'Inter',
               }}>
-                立即咨询
+                {t('sports_page.cta_box_btn')}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </a>
             </motion.div>
