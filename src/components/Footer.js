@@ -1,20 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { useTranslation } from 'next-i18next/pages';
 
-const navLinks = [
-  { label: '解决方案', href: '/solutions' },
-  { label: '行业应用', href: '/industries' },
-  { label: '产品', href: '/products' },
-  { label: '关于我们', href: '/about' },
-  { label: '常见问题', href: '/faq' },
-  { label: '联系我们', href: '/contact' },
-];
-
-const services = [
-  '企业官网与网站系统',
-  'AI 客服机器人',
-  '自动回复系统',
-  '业务自动化方案',
-];
+const NAV_HREFS = ['/solutions', '/industries', '/products', '/about', '/faq', '/contact'];
+const NAV_KEYS = ['solutions', 'industries', 'products', 'about', 'faq', 'contact'];
 
 const linkStyle = {
   color: 'rgba(255,255,255,0.38)',
@@ -27,6 +16,16 @@ const linkStyle = {
 };
 
 export default function Footer() {
+  const { t } = useTranslation('common');
+
+  const navLinks = NAV_KEYS.map((key, i) => ({ label: t(`nav.${key}`), href: NAV_HREFS[i] }));
+  const services = [
+    t('footer.service1'),
+    t('footer.service2'),
+    t('footer.service3'),
+    t('footer.service4'),
+  ];
+
   return (
     <footer style={{ background: '#000', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
       <div
@@ -90,7 +89,7 @@ export default function Footer() {
                 fontFamily: 'Inter, sans-serif',
               }}
             >
-              为企业提供官网建设、AI 客服与业务自动化解决方案。帮助品牌表达更清晰、客户沟通更顺畅、业务流程更高效。
+              {t('footer.desc')}
             </p>
           </div>
 
@@ -108,10 +107,10 @@ export default function Footer() {
                 fontFamily: 'Inter, sans-serif',
               }}
             >
-              导航
+              {t('footer.nav_title')}
             </h3>
             {navLinks.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 style={linkStyle}
@@ -119,7 +118,7 @@ export default function Footer() {
                 onMouseLeave={(e) => (e.target.style.color = 'rgba(255,255,255,0.38)')}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -137,7 +136,7 @@ export default function Footer() {
                 fontFamily: 'Inter, sans-serif',
               }}
             >
-              服务方向
+              {t('footer.services_title')}
             </h3>
             {services.map((item) => (
               <p key={item} style={{ ...linkStyle, cursor: 'default' }}>
@@ -167,7 +166,7 @@ export default function Footer() {
               fontFamily: 'Inter, sans-serif',
             }}
           >
-            © 2026 STARBRIGHT SOLUTIONS · All rights reserved.
+            {t('footer.rights')}
           </p>
           <p
             style={{
@@ -177,7 +176,7 @@ export default function Footer() {
               fontFamily: 'Inter, sans-serif',
             }}
           >
-            企业官网 · AI 客服 · 业务自动化
+            {t('footer.tagline')}
           </p>
         </div>
       </div>
