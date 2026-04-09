@@ -4,9 +4,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { appWithTranslation } from 'next-i18next/pages';
 import nextI18NextConfig from '../next-i18next.config';
 import '../styles/globals.css';
+import dynamic from 'next/dynamic';
 import Header from '../src/components/Header';
-import Footer from '../src/components/Footer';
 import ScrollTop from '../src/components/ScrollTop';
+
+// Footer rendered client-side only to avoid SSG hydration mismatch with i18n
+const Footer = dynamic(() => import('../src/components/Footer'), { ssr: false });
 
 const siteName = 'STARBRIGHT SOLUTIONS';
 const defaultTitle = 'STARBRIGHT SOLUTIONS | AI-Powered Digital Solutions';
